@@ -193,7 +193,7 @@ const Hero: React.FC = () => {
 
             {/* Diagnostic UI Component 1: Scanning Status */}
             <motion.div 
-              className="absolute top-[10%] -left-6 sm:-left-16 z-40"
+              className="absolute top-[10%] -left-6 sm:-left-16 z-40 hidden sm:block"
               initial={{ x: -40, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -217,7 +217,7 @@ const Hero: React.FC = () => {
 
             {/* Diagnostic UI Component 2: Data Panel */}
             <motion.div 
-              className="absolute bottom-[15%] -right-8 sm:-right-12 z-40"
+              className="absolute bottom-[15%] -right-8 sm:-right-12 z-40 hidden sm:block"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.8 }}

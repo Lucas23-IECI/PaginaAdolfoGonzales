@@ -163,13 +163,13 @@ const Contact: React.FC = () => {
                   type="submit"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
-                  className="w-full bg-primary hover:bg-secondary text-white font-bold py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-[0_10px_30px_rgba(15,90,59,0.3)] text-lg group relative overflow-hidden"
+                  className="w-full bg-primary hover:bg-secondary text-white font-bold py-4 sm:py-5 rounded-2xl transition-all flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-[0_10px_30px_rgba(15,90,59,0.3)] text-sm sm:text-base lg:text-lg group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                  <MessageCircle size={24} />
-                  Solicitar Evaluación Inmediata
-                  <motion.div animate={{ x: isHovering ? 5 : 0 }} transition={{ type: "spring" }}>
-                    <ArrowRight size={20} />
+                  <MessageCircle size={18} className="shrink-0" />
+                  <span className="whitespace-nowrap">Solicitar Evaluación Inmediata</span>
+                  <motion.div animate={{ x: isHovering ? 5 : 0 }} transition={{ type: "spring" }} className="shrink-0">
+                    <ArrowRight size={16} />
                   </motion.div>
                 </button>
                 <p className="text-xs text-slate-500 text-center mt-4 font-medium">
