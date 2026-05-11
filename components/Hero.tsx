@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, ArrowRight, Activity, Crosshair, MapPin, Droplet, Zap } from 'lucide-react';
+import { MessageCircle, ArrowRight, Activity, MapPin, Droplet, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WHATSAPP_LINK =
@@ -32,7 +32,6 @@ const SonarWave = () => (
 );
 
 const Hero: React.FC = () => {
-  const [hoveredNode, setHoveredNode] = useState<number | null>(null);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -148,46 +147,11 @@ const Hero: React.FC = () => {
                 className="w-full h-full object-cover object-center scale-110 opacity-80 group-hover:opacity-60 transition-all duration-[3s]"
               />
               
-              {/* Tech Scanline Animation */}
-              <div className="absolute inset-0 z-20 pointer-events-none">
-                <div className="w-full h-1 bg-[#22c55e] shadow-[0_0_20px_4px_rgba(34,197,94,0.6)] animate-[scan_3s_ease-in-out_infinite]" />
-              </div>
-
-              {/* Technical Grid Overlay on Image */}
+              {/* Technical Grid Overlay on Image */
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#16a34a1a_1px,transparent_1px),linear-gradient(to_bottom,#16a34a1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-70 mix-blend-overlay z-10" />
               
               {/* Vignette */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30 z-10" />
-
-              {/* Interactive Nodes */}
-              <div 
-                className="absolute top-[30%] left-[20%] z-30 cursor-crosshair group/node"
-                onMouseEnter={() => setHoveredNode(1)}
-                onMouseLeave={() => setHoveredNode(null)}
-              >
-                <div className="w-4 h-4 bg-[#22c55e] rounded-full shadow-[0_0_15px_rgba(34,197,94,1)] animate-pulse relative">
-                  {hoveredNode === 1 && (
-                    <div className="absolute top-6 -left-12 bg-black/80 backdrop-blur text-[#22c55e] text-[10px] font-mono px-3 py-1.5 rounded border border-[#22c55e]/50 whitespace-nowrap">
-                      SECTOR A: DESPEJADO
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div 
-                className="absolute top-[60%] right-[30%] z-30 cursor-crosshair group/node"
-                onMouseEnter={() => setHoveredNode(2)}
-                onMouseLeave={() => setHoveredNode(null)}
-              >
-                <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,1)] relative">
-                  <div className="absolute inset-0 rounded-full border border-red-500 animate-ping"></div>
-                  {hoveredNode === 2 && (
-                    <div className="absolute top-6 -left-16 bg-black/80 backdrop-blur text-red-400 text-[10px] font-mono px-3 py-1.5 rounded border border-red-500/50 whitespace-nowrap flex items-center gap-2">
-                      <Crosshair size={10} /> ANOMALÍA DETECTADA
-                    </div>
-                  )}
-                </div>
-              </div>
 
             </div>
 
