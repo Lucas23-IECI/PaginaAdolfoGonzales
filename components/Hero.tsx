@@ -47,14 +47,14 @@ const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100vh] flex items-center pt-24 pb-20 overflow-hidden"
+      className="relative min-h-[100vh] flex items-start lg:items-center pt-24 pb-20 overflow-hidden"
     >
       {/* ── Background: Ambient Glows ── */}
       <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#16a34a]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#0f5a3b]/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* ── Text Content ── */}
           <motion.div
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
             {/* Headline */}
             <motion.h1 
               variants={fadeUp} 
-              className="text-6xl sm:text-7xl lg:text-[6rem] font-black text-slate-900 leading-[0.85] tracking-[-0.04em] relative"
+              className="text-4xl sm:text-6xl lg:text-[6rem] font-black text-slate-900 leading-[0.85] tracking-[-0.04em] relative"
             >
               <span className="block mb-2">Localizamos</span>
               <span className="block mb-2 text-slate-400">la fuga,</span>
@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
 
           {/* ── Visual Content (Image + Diagnostic Overlays) ── */}
           <motion.div 
-            className="relative lg:h-[750px] w-full flex items-center justify-center lg:justify-end mt-16 lg:mt-0 perspective-1000"
+            className="relative lg:h-[750px] w-full flex items-center justify-center lg:justify-end mt-6 lg:mt-0 perspective-1000"
             initial={{ opacity: 0, rotateY: 20, scale: 0.9 }}
             animate={{ opacity: 1, rotateY: 0, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
@@ -193,7 +193,7 @@ const Hero: React.FC = () => {
 
             {/* Diagnostic UI Component 1: Scanning Status */}
             <motion.div 
-              className="absolute top-[10%] -left-6 sm:-left-16 z-40 hidden sm:block"
+              className="absolute top-4 left-4 sm:top-[10%] sm:-left-16 z-40"
               initial={{ x: -40, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -217,7 +217,7 @@ const Hero: React.FC = () => {
 
             {/* Diagnostic UI Component 2: Data Panel */}
             <motion.div 
-              className="absolute bottom-[15%] -right-8 sm:-right-12 z-40 hidden sm:block"
+              className="absolute bottom-4 right-4 sm:bottom-[15%] sm:-right-12 z-40"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.8 }}
