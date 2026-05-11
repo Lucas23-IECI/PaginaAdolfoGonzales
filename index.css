@@ -1,0 +1,21 @@
+/* Adolfo Detecciones — Custom Styles */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f0fdf4;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f5a3b;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #093d28;
+}
+
+/* Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
