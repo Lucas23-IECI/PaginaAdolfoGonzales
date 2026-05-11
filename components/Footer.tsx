@@ -147,7 +147,7 @@ const Footer: React.FC = () => {
               <FileText size={12} /> Términos
             </Link>
             <span className="hidden md:inline text-slate-700">|</span>
-            <p className="hidden md:block">
+            <p>
               Diseñado por{' '}
               <a href="https://purocode.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-bold">
                 PuroCode
