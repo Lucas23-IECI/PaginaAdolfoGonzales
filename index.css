@@ -1,5 +1,13 @@
 /* Adolfo Detecciones — Custom Styles */
 
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #fafafa;
+  background-image: linear-gradient(to right, #00000008 1px, transparent 1px),
+                    linear-gradient(to bottom, #00000008 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

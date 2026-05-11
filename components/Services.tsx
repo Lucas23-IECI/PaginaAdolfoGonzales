@@ -67,7 +67,7 @@ const fadeUp = {
 
 const Services: React.FC = () => {
   return (
-    <section id="servicios" className="relative py-32 overflow-hidden bg-background-alt">
+    <section id="servicios" className="relative py-32 overflow-hidden bg-transparent">
       {/* Background Decor */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       <div className="absolute -left-[20%] top-[20%] w-[50vw] h-[50vw] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />

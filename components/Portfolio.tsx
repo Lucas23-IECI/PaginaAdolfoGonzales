@@ -28,7 +28,7 @@ const Portfolio: React.FC = () => {
   const [selected, setSelected] = useState<PortfolioItem | null>(null);
 
   return (
-    <section id="portafolio" className="py-32 bg-white relative overflow-hidden">
+    <section id="portafolio" className="py-32 bg-transparent relative overflow-hidden">
       
       {/* Decorative Text Background */}
       <div className="absolute top-10 -left-10 text-[10rem] font-extrabold text-slate-50 opacity-50 pointer-events-none select-none tracking-tighter leading-none whitespace-nowrap z-0">

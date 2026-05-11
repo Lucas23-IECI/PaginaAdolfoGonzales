@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
             <span className="hidden md:inline text-slate-700">|</span>
             <p className="hidden md:block">
               Diseñado por{' '}
-              <a href="https://purocode.cl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-bold">
+              <a href="https://purocode.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-bold">
                 PuroCode
               </a>
             </p>

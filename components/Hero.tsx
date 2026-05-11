@@ -1,18 +1,12 @@
-import React from 'react';
-import { MessageCircle, ArrowRight, Award, Target, ShieldCheck, MapPin, Droplet } from 'lucide-react';
+import React, { useState } from 'react';
+import { MessageCircle, ArrowRight, Activity, Crosshair, MapPin, Droplet, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WHATSAPP_LINK =
   'https://wa.me/56966795221?text=Hola%20Adolfo%2C%20necesito%20detectar%20una%20fuga%20de%20agua.%20%C2%BFPuede%20ayudarme%3F';
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80';
-
-const trustBadges = [
-  { icon: Award, label: '10 Años Experiencia' },
-  { icon: Target, label: 'Precisión' },
-  { icon: ShieldCheck, label: 'Sin Demoler' },
-];
+  'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,11 +17,23 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
+const SonarWave = () => (
+  <div className="relative w-12 h-12 flex items-center justify-center">
+    <div className="absolute inset-0 rounded-full border-2 border-[#16a34a] opacity-20 animate-ping" style={{ animationDuration: '2s' }} />
+    <div className="absolute inset-1 rounded-full border-2 border-[#16a34a] opacity-40 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
+    <div className="relative z-10 w-5 h-5 bg-[#16a34a] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(22,163,74,0.6)]">
+      <Activity size={12} className="text-white" />
+    </div>
+  </div>
+);
+
 const Hero: React.FC = () => {
+  const [hoveredNode, setHoveredNode] = useState<number | null>(null);
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -41,32 +47,32 @@ const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100vh] pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-background-alt"
+      className="relative min-h-[100vh] flex items-center pt-24 pb-20 overflow-hidden"
     >
-      {/* Editorial Background Elements */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none mix-blend-multiply" />
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+      {/* ── Background: Ambient Glows ── */}
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#16a34a]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#0f5a3b]/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           
-          {/* ── Text Content (Spans 7 columns) ── */}
+          {/* ── Text Content ── */}
           <motion.div
-            className="lg:col-span-7 flex flex-col gap-8 z-20"
+            className="flex flex-col gap-8 z-20 max-w-2xl relative"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            {/* Badge */}
+            {/* System Status Badge */}
             <motion.div variants={fadeUp} className="flex items-center">
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-lg bg-white/60 backdrop-blur-md border border-slate-200/60 shadow-sm relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16a34a] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#16a34a]" />
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-primary uppercase tracking-widest">
-                  Especialista en Fugas · Concepción
+                <span className="text-xs font-black text-slate-800 tracking-widest uppercase flex items-center gap-2">
+                  Detección Inteligente <Zap size={14} className="text-[#16a34a]" />
                 </span>
               </div>
             </motion.div>
@@ -74,127 +80,163 @@ const Hero: React.FC = () => {
             {/* Headline */}
             <motion.h1 
               variants={fadeUp} 
-              className="text-5xl sm:text-6xl lg:text-[5rem] font-extrabold text-primary leading-[1.05] tracking-tight"
+              className="text-6xl sm:text-7xl lg:text-[6rem] font-black text-slate-900 leading-[0.85] tracking-[-0.04em] relative"
             >
-              Detén la fuga <br className="hidden sm:block" />
-              de agua{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary relative inline-block">
-                sin romper
-                {/* Curved underline */}
-                <svg
-                  className="absolute -bottom-3 left-0 w-full drop-shadow-md"
-                  viewBox="0 0 300 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 12C50 3 100 2 150 5C200 8 250 12 298 5"
-                    stroke="#16a34a"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
+              <span className="block mb-2">Localizamos</span>
+              <span className="block mb-2 text-slate-400">la fuga,</span>
+              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#0f5a3b] via-[#16a34a] to-[#22c55e] inline-block pr-8">
+                no la excusa.
+                <svg className="absolute -bottom-4 left-0 w-full drop-shadow-[0_5px_10px_rgba(22,163,74,0.4)]" viewBox="0 0 400 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 15C100 5 200 5 300 15C350 20 380 15 400 5" stroke="url(#paint0_linear)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+                  <defs>
+                    <linearGradient id="paint0_linear" x1="0" y1="10" x2="400" y2="10" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#16a34a"/>
+                      <stop offset="1" stopColor="#22c55e" stopOpacity="0"/>
+                    </linearGradient>
+                  </defs>
                 </svg>
-              </span>{' '}
-              <br className="hidden sm:block" />
-              un solo azulejo
+              </span>
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p 
               variants={fadeUp} 
-              className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl font-medium"
+              className="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium mt-4 border-l-4 border-[#16a34a] pl-6"
             >
-              Con tecnología acústica de precisión y{' '}
-              <strong className="text-primary font-extrabold bg-primary/5 px-1.5 py-0.5 rounded">10 años de experiencia</strong> en
-              gasfitería, detectamos filtraciones de agua de forma rápida, exacta y
-              sin obras innecesarias.
+              Dile adiós a los gasfiteros que rompen para buscar. Con nuestro sistema de <strong className="text-slate-900 font-extrabold bg-[#16a34a]/10 px-2 py-0.5 rounded">Radar Acústico 3D</strong>, sabemos exactamente dónde está el problema antes de tocar una herramienta.
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-5 pt-4">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-6">
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white text-base font-bold rounded-2xl overflow-hidden transition-all shadow-[0_20px_40px_-15px_rgba(15,90,59,0.5)] hover:-translate-y-1"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#0a0a0a] text-white text-lg font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(22,163,74,0.4)]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <MessageCircle size={22} className="relative z-10" />
-                <span className="relative z-10">Contactar por WhatsApp</span>
+                {/* Tech scanline effect on hover */}
+                <div className="absolute inset-0 bg-[#16a34a]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                
+                <Activity size={24} className="relative z-10 text-[#22c55e] group-hover:animate-pulse" />
+                <span className="relative z-10">Solicitar Escaneo</span>
               </a>
               
               <a
                 href="#servicios"
                 onClick={(e) => handleScroll(e, 'servicios')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white hover:bg-slate-50 text-primary border border-slate-200 text-base font-bold rounded-2xl transition-all hover:border-slate-300 hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-200 hover:border-slate-300 text-lg font-bold rounded-2xl transition-all shadow-sm"
               >
-                Ver Servicios
-                <ArrowRight size={20} className="text-secondary" />
+                Ver Tecnología
+                <ArrowRight size={20} className="text-slate-400" />
               </a>
-            </motion.div>
-
-            {/* Trust Badges - Editorial Layout */}
-            <motion.div variants={fadeUp} className="pt-8 flex flex-wrap gap-6 items-center">
-              {trustBadges.map(({ icon: Icon, label }, idx) => (
-                <div key={label} className="flex items-center gap-2.5 group cursor-default">
-                  <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-100 group-hover:border-secondary/30 group-hover:shadow-md transition-all">
-                    <Icon size={18} className="text-secondary group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-700">{label}</span>
-                </div>
-              ))}
             </motion.div>
           </motion.div>
 
-          {/* ── Image Content (Spans 5 columns) ── */}
+          {/* ── Visual Content (Image + Diagnostic Overlays) ── */}
           <motion.div 
-            className="lg:col-span-5 relative h-[500px] lg:h-[700px] w-full mt-12 lg:mt-0"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="relative lg:h-[750px] w-full flex items-center justify-center lg:justify-end mt-16 lg:mt-0 perspective-1000"
+            initial={{ opacity: 0, rotateY: 20, scale: 0.9 }}
+            animate={{ opacity: 1, rotateY: 0, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            {/* Image Container with Custom Shape */}
-            <div className="absolute inset-0 z-10 rounded-t-full rounded-b-[40px] overflow-hidden shadow-[0_30px_60px_-15px_rgba(15,90,59,0.3)] border-8 border-white">
+            {/* Main Image Mask with 3D feel */}
+            <div className="relative w-full max-w-[550px] aspect-[4/5] lg:aspect-auto lg:h-[95%] rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] border border-white/40 bg-slate-900 group">
               <img
                 src={HERO_IMAGE}
-                alt="Detección de fugas de agua con tecnología avanzada"
-                className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-1000"
+                alt="Inspección técnica de tuberías"
+                className="w-full h-full object-cover object-center scale-110 opacity-80 group-hover:opacity-60 transition-all duration-[3s]"
               />
-              {/* Inner Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-80" />
+              
+              {/* Tech Scanline Animation */}
+              <div className="absolute inset-0 z-20 pointer-events-none">
+                <div className="w-full h-1 bg-[#22c55e] shadow-[0_0_20px_4px_rgba(34,197,94,0.6)] animate-[scan_3s_ease-in-out_infinite]" />
+              </div>
+
+              {/* Technical Grid Overlay on Image */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#16a34a1a_1px,transparent_1px),linear-gradient(to_bottom,#16a34a1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-70 mix-blend-overlay z-10" />
+              
+              {/* Vignette */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30 z-10" />
+
+              {/* Interactive Nodes */}
+              <div 
+                className="absolute top-[30%] left-[20%] z-30 cursor-crosshair group/node"
+                onMouseEnter={() => setHoveredNode(1)}
+                onMouseLeave={() => setHoveredNode(null)}
+              >
+                <div className="w-4 h-4 bg-[#22c55e] rounded-full shadow-[0_0_15px_rgba(34,197,94,1)] animate-pulse relative">
+                  {hoveredNode === 1 && (
+                    <div className="absolute top-6 -left-12 bg-black/80 backdrop-blur text-[#22c55e] text-[10px] font-mono px-3 py-1.5 rounded border border-[#22c55e]/50 whitespace-nowrap">
+                      SECTOR A: DESPEJADO
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div 
+                className="absolute top-[60%] right-[30%] z-30 cursor-crosshair group/node"
+                onMouseEnter={() => setHoveredNode(2)}
+                onMouseLeave={() => setHoveredNode(null)}
+              >
+                <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,1)] relative">
+                  <div className="absolute inset-0 rounded-full border border-red-500 animate-ping"></div>
+                  {hoveredNode === 2 && (
+                    <div className="absolute top-6 -left-16 bg-black/80 backdrop-blur text-red-400 text-[10px] font-mono px-3 py-1.5 rounded border border-red-500/50 whitespace-nowrap flex items-center gap-2">
+                      <Crosshair size={10} /> ANOMALÍA DETECTADA
+                    </div>
+                  )}
+                </div>
+              </div>
+
             </div>
 
-            {/* Floating Glass Card 1 */}
+            {/* Diagnostic UI Component 1: Scanning Status */}
             <motion.div 
-              className="absolute top-20 -left-12 sm:-left-20 z-20"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              className="absolute top-[10%] -left-6 sm:-left-16 z-40"
+              initial={{ x: -40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-white/80 backdrop-blur-xl p-5 rounded-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-white flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
-                  <MapPin className="text-secondary" size={24} />
-                </div>
+              <div className="bg-white/90 backdrop-blur-2xl p-5 sm:p-6 rounded-3xl shadow-2xl border border-white/50 flex items-center gap-5">
+                <SonarWave />
                 <div>
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-0.5">Cobertura</p>
-                  <p className="text-sm font-extrabold text-primary">Gran Concepción</p>
+                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Módulo Acústico</p>
+                  <p className="text-base font-black text-slate-800">Analizando terreno...</p>
+                  <div className="flex gap-1.5 mt-2.5">
+                    <div className="h-2 w-12 bg-[#16a34a] rounded-full overflow-hidden relative">
+                       <div className="absolute inset-0 bg-white/40 animate-[shimmer_1s_infinite] -translate-x-full"></div>
+                    </div>
+                    <div className="h-2 w-4 bg-[#16a34a]/20 rounded-full"></div>
+                    <div className="h-2 w-2 bg-[#16a34a]/20 rounded-full"></div>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Floating Glass Card 2 */}
+            {/* Diagnostic UI Component 2: Data Panel */}
             <motion.div 
-              className="absolute bottom-24 -right-4 sm:-right-12 z-20"
-              initial={{ y: -20, opacity: 0 }}
+              className="absolute bottom-[15%] -right-8 sm:-right-12 z-40"
+              initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
+              transition={{ delay: 1.1, duration: 0.8 }}
             >
-              <div className="bg-primary/90 backdrop-blur-xl p-5 rounded-2xl shadow-[0_20px_40px_-10px_rgba(15,90,59,0.4)] border border-primary-dark/50 flex flex-col gap-2 max-w-[200px]">
-                <Droplet className="text-secondary" size={28} />
-                <p className="text-white font-bold leading-tight mt-1">Detección exacta sin destruir tu hogar.</p>
+              <div className="bg-[#0f5a3b]/95 backdrop-blur-xl p-6 rounded-3xl shadow-[0_30px_60px_-15px_rgba(15,90,59,0.5)] border border-[#16a34a]/40 flex flex-col gap-2 max-w-[240px]">
+                <div className="flex justify-between items-center mb-1">
+                  <div className="w-10 h-10 rounded-xl bg-[#16a34a]/30 flex items-center justify-center border border-[#16a34a]/50">
+                    <Droplet size={20} className="text-[#22c55e]" />
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-bold text-[#16a34a] uppercase">Tasa de Éxito</span>
+                    <span className="text-lg font-black text-white">99.9%</span>
+                  </div>
+                </div>
+                <div className="w-full h-px bg-gradient-to-r from-[#16a34a]/50 to-transparent my-2" />
+                <p className="text-white font-bold leading-tight text-sm">Garantía de daño cero en infraestructuras.</p>
               </div>
             </motion.div>
-            
+
           </motion.div>
         </div>
       </div>
@@ -203,4 +245,5 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
 

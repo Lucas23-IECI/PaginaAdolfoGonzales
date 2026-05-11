@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contacto" className="py-32 bg-slate-50 relative overflow-hidden scroll-mt-24">
+    <section id="contacto" className="py-32 bg-transparent relative overflow-hidden scroll-mt-24">
       {/* Background Decorators for Light Theme */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-primary/5 rounded-[100%] blur-[100px] pointer-events-none opacity-60" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[80px] pointer-events-none" />
