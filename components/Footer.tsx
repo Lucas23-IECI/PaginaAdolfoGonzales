@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, Mail, Shield, FileText, ArrowUpRight } from 'lucide-react';
+import { Mail, Shield, FileText, ArrowUpRight } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { Link } from 'react-router-dom';
 
 const PHONE_RAW   = '56966795221';
@@ -26,6 +27,7 @@ const LogoIcon = ({ className = '' }: { className?: string }) => (
     <circle cx="18" cy="26" r="10.5" stroke="#020617" strokeWidth="1" strokeOpacity="0.25" />
   </svg>
 );
+
 
 const Footer: React.FC = () => {
   return (
@@ -56,21 +58,28 @@ const Footer: React.FC = () => {
             <p className="text-slate-400 leading-relaxed text-sm font-light">
               Más de 10 años asegurando la tranquilidad de hogares en el Gran Concepción mediante tecnología acústica no destructiva.
             </p>
-            <div className="flex gap-3 pt-2">
-              <a
-                href={`https://wa.me/${PHONE_RAW}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-sm"
-              >
-                <MessageCircle size={18} />
-              </a>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300 shadow-sm"
-              >
-                <Mail size={18} />
-              </a>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex gap-3">
+                <a
+                  href={`https://wa.me/${PHONE_RAW}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-sm"
+                >
+                  <WhatsAppIcon size={18} />
+                </a>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300 shadow-sm"
+                >
+                  <Mail size={18} />
+                </a>
+              </div>
+              <div className="hidden sm:block h-10 w-px bg-slate-800/50 mx-1" />
+              <div className="flex flex-col">
+                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">Instalador Autorizado</span>
+                <img src="/sec_logo.png" alt="Certificación SEC" className="h-16 w-auto object-contain drop-shadow-md" />
+              </div>
             </div>
           </div>
 

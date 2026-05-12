@@ -1,56 +1,80 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Layers, TreePine, Headphones, Zap, Gift, ArrowRight } from 'lucide-react';
+import { Home, Layers, TreePine, Headphones, ShieldCheck, Wrench, Gift, ArrowRight } from 'lucide-react';
 
-const services = [
+interface Service {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  colSpan: string;
+  bgClass: string;
+  textClass: string;
+  iconClass: string;
+  popular: boolean;
+  badgeText?: string;
+}
+
+const services: Service[] = [
+  {
+    icon: ShieldCheck,
+    title: 'Certificación SEC y Gas',
+    description: 'Instaladores autorizados SEC. Realizamos Declaración de Instalación de Gas (TC6), Tramitación Sello Verde, Redes de Gas bajo normalización, Fugas de Gas y Reparación/Instalación de Calefont.',
+    colSpan: 'lg:col-span-6',
+    bgClass: 'bg-primary text-white border-transparent',
+    textClass: '',
+    iconClass: 'bg-white/10 text-secondary border border-white/20',
+    popular: true,
+    badgeText: 'Certificado SEC',
+  },
   {
     icon: Headphones,
     title: 'Tecnología Acústica de Precisión',
     description: 'Utilizamos geófonos de alta sensibilidad que "escuchan" la fuga a través del concreto, localizándola con precisión milimétrica.',
-    colSpan: 'lg:col-span-8',
-    bgClass: 'bg-primary text-white',
-    textClass: 'text-white/80',
-    iconClass: 'text-secondary bg-white/10',
+    colSpan: 'lg:col-span-6',
+    bgClass: 'bg-primary text-white border-transparent',
+    textClass: '',
+    iconClass: 'bg-white/10 text-secondary border border-white/20',
     popular: true,
+    badgeText: 'Tecnología Estrella',
+  },
+  {
+    icon: Wrench,
+    title: 'Gasfitería Integral',
+    description: 'Trabajos en PPR, PEX, COBRE y PVC. Instalación de Redes de Agua, Griferías, Sanitarias y Calefacción Central.',
+    colSpan: 'lg:col-span-3',
+    bgClass: 'bg-white text-slate-900 border-slate-200/60',
+    textClass: '',
+    iconClass: 'bg-slate-50 text-primary border border-slate-100',
+    popular: false,
   },
   {
     icon: Home,
     title: 'Cañerías Interiores',
     description: 'Fugas en muros y cielos sin romper.',
-    colSpan: 'lg:col-span-4',
-    bgClass: 'bg-white',
-    textClass: 'text-slate-500',
-    iconClass: 'text-primary bg-primary/5',
+    colSpan: 'lg:col-span-3',
+    bgClass: 'bg-white text-slate-900 border-slate-200/60',
+    textClass: '',
+    iconClass: 'bg-slate-50 text-primary border border-slate-100',
     popular: false,
   },
   {
     icon: Layers,
     title: 'Losa y Piso Radiante',
     description: 'Detección exacta en sistemas de calefacción subterránea.',
-    colSpan: 'lg:col-span-4',
-    bgClass: 'bg-white',
-    textClass: 'text-slate-500',
-    iconClass: 'text-primary bg-primary/5',
+    colSpan: 'lg:col-span-3',
+    bgClass: 'bg-white text-slate-900 border-slate-200/60',
+    textClass: '',
+    iconClass: 'bg-slate-50 text-primary border border-slate-100',
     popular: false,
   },
   {
     icon: TreePine,
     title: 'Exterior y Jardines',
     description: 'Localización en redes subterráneas y patios.',
-    colSpan: 'lg:col-span-4',
-    bgClass: 'bg-white',
-    textClass: 'text-slate-500',
-    iconClass: 'text-primary bg-primary/5',
-    popular: false,
-  },
-  {
-    icon: Gift,
-    title: 'Presupuesto Sin Compromiso',
-    description: 'Evaluación y cotización 100% gratuita.',
-    colSpan: 'lg:col-span-4',
-    bgClass: 'bg-gradient-to-br from-secondary/20 to-secondary/5 border-secondary/20',
-    textClass: 'text-slate-600',
-    iconClass: 'text-secondary bg-white',
+    colSpan: 'lg:col-span-3',
+    bgClass: 'bg-white text-slate-900 border-slate-200/60',
+    textClass: '',
+    iconClass: 'bg-slate-50 text-primary border border-slate-100',
     popular: false,
   },
 ];
@@ -111,7 +135,7 @@ const Services: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Bento Grid */}
+        {/* Modern Custom Grid */}
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
@@ -123,34 +147,40 @@ const Services: React.FC = () => {
             <motion.div
               key={index}
               variants={fadeUp}
-              className={`group relative p-8 sm:p-10 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${service.colSpan} ${service.bgClass} ${service.bgClass === 'bg-white' ? 'border border-slate-100 shadow-xl shadow-slate-200/50' : 'shadow-2xl shadow-primary/20'}`}
+              className={`group relative flex flex-col justify-between p-8 sm:p-10 rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 border ${service.colSpan} ${service.bgClass} shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl`}
             >
-              {/* Internal Gradient Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {service.popular && (
-                <div className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest backdrop-blur-md border border-secondary/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-                  Tecnología Estrella
-                </div>
+              {/* Background gradient overlay for depth */}
+              {service.bgClass.includes('bg-primary') && (
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               )}
+              
+              {/* Top Section */}
+              <div className="relative z-10 flex justify-between items-start mb-16">
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ${service.iconClass}`}>
+                  <service.icon size={26} strokeWidth={2} />
+                </div>
 
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${service.iconClass}`}>
-                <service.icon size={32} strokeWidth={1.5} />
+                {service.popular && (
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white text-[10px] font-black uppercase tracking-widest backdrop-blur-md border border-white/20 shadow-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                    {service.badgeText}
+                  </div>
+                )}
               </div>
 
-              <div className="relative z-10">
-                <h3 className={`text-2xl font-bold mb-3 ${service.bgClass.includes('bg-primary') ? 'text-white' : 'text-slate-900'}`}>
+              {/* Bottom Section */}
+              <div className="relative z-10 mt-auto">
+                <h3 className="text-2xl sm:text-3xl font-extrabold mb-4 tracking-tight leading-tight">
                   {service.title}
                 </h3>
-                <p className={`text-base leading-relaxed ${service.textClass}`}>
+                <p className={`text-sm sm:text-base leading-relaxed ${service.bgClass.includes('bg-primary') ? 'text-white/80' : 'text-slate-500'}`}>
                   {service.description}
                 </p>
               </div>
 
-              {/* Decorative Arrow */}
-              <div className={`absolute bottom-8 right-8 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ${service.bgClass.includes('bg-primary') ? 'text-secondary' : 'text-primary'}`}>
-                <ArrowRight size={24} />
+              {/* Decorative floating icon */}
+              <div className={`absolute -right-8 -bottom-8 opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-700 transform group-hover:scale-125 group-hover:-rotate-12 pointer-events-none ${service.bgClass.includes('bg-primary') ? 'text-white' : 'text-slate-900'}`}>
+                <service.icon size={200} strokeWidth={1} />
               </div>
             </motion.div>
           ))}

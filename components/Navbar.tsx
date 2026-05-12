@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { NavItem } from '../types';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -129,7 +130,7 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 className="bg-primary hover:bg-secondary transition-colors text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md flex items-center gap-2"
               >
-                <MessageCircle size={18} />
+                <WhatsAppIcon size={18} />
                 Pedir Presupuesto
               </a>
             </div>
@@ -178,7 +179,7 @@ const Navbar: React.FC = () => {
             rel="noopener noreferrer"
             className="mt-8 flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white text-lg font-bold rounded-xl"
           >
-            <MessageCircle size={22} />
+            <WhatsAppIcon size={22} />
             Pedir Presupuesto
           </a>
         </div>
