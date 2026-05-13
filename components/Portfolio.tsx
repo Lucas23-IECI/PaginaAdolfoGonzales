@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const portfolioItems: PortfolioItem[] = [
   {
-    image: '/images/deteccion_subterranea_v2.png',
+    image: '/images/deteccion_subterranea_v2.webp',
     alt:   'Detección de fuga en cañería subterránea',
     title: 'Detección Subterránea',
     description: 'Localización a 80cm de profundidad sin excavar el jardín completo.',
@@ -13,7 +13,7 @@ const portfolioItems: PortfolioItem[] = [
     whatsappText: 'Hola Adolfo, me interesa el servicio de Detección Subterránea que vi en la galería de fotos. ¿Me puede orientar?',
   },
   {
-    image: '/images/tecnico_geofono_v2.png',
+    image: '/images/tecnico_geofono_v2.webp',
     alt:   'Técnico detectando fuga con geófono acústico',
     title: 'Precisión Acústica',
     description: 'Diagnóstico con geófono para evitar daños colaterales.',
@@ -21,7 +21,7 @@ const portfolioItems: PortfolioItem[] = [
     whatsappText: 'Hola Adolfo, me interesa la detección con Precisión Acústica (Geófono) que vi en la galería de fotos. ¿Me puede orientar?',
   },
   {
-    image: '/images/fuga_losa_v2.png',
+    image: '/images/fuga_losa_v2.webp',
     alt:   'Detección de fuga en losa de hormigón',
     title: 'Fugas en Losa',
     description: 'Intervención milimétrica en losa de hormigón residencial.',
@@ -107,7 +107,10 @@ const Portfolio: React.FC = () => {
                 <img 
                   src={portfolioItems[0].image} 
                   alt={portfolioItems[0].alt}
+                  width={800}
+                  height={800}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
@@ -144,7 +147,10 @@ const Portfolio: React.FC = () => {
                   <img 
                     src={portfolioItems[1].image} 
                     alt={portfolioItems[1].alt}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                    loading="lazy"
                   />
                 </div>
                 {/* Floating Info Box - Precisión Acústica (Superior Izquierda) */}
@@ -173,7 +179,10 @@ const Portfolio: React.FC = () => {
                   <img 
                     src={portfolioItems[2].image} 
                     alt={portfolioItems[2].alt}
+                    width={800}
+                    height={800}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                    loading="lazy"
                   />
                 </div>
                 {/* Floating Info Box - Fugas en Losa (Inferior Izquierda) */}
@@ -214,6 +223,8 @@ const Portfolio: React.FC = () => {
                 <img
                   src={selected.image}
                   alt={selected.alt}
+                  width={800}
+                  height={800}
                   className="w-full h-48 md:h-full object-cover md:max-h-[80vh]"
                 />
               </div>
@@ -237,7 +248,7 @@ const Portfolio: React.FC = () => {
               <button
                 onClick={() => setSelected(null)}
                 className="absolute top-4 right-4 md:right-auto md:left-4 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full transition-colors z-10"
-                aria-label="Cerrar"
+                aria-label="Cerrar ventana de detalles del servicio"
               >
                 <X size={20} className="text-white md:text-slate-900" />
               </button>

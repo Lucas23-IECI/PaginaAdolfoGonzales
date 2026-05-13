@@ -6,7 +6,7 @@ const WHATSAPP_LINK =
   'https://wa.me/56966795221?text=Hola%20Adolfo%2C%20necesito%20detectar%20una%20fuga%20de%20agua.%20%C2%BFPuede%20ayudarme%3F';
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&fm=webp&w=800&q=80';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -86,6 +86,7 @@ const CTABlock = ({ handleScroll }: { handleScroll: any }) => (
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Solicitar escaneo de fuga de agua vía WhatsApp"
       className="group relative inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-5 bg-[#0a0a0a] text-white text-base sm:text-lg font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(22,163,74,0.4)]"
     >
       <div className="absolute inset-0 bg-[#16a34a]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
@@ -96,6 +97,7 @@ const CTABlock = ({ handleScroll }: { handleScroll: any }) => (
     <a
       href="#servicios"
       onClick={(e) => handleScroll(e, 'servicios')}
+      aria-label="Ver detalles de nuestra tecnología de radar"
       className="inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-5 bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-200 hover:border-slate-300 text-base sm:text-lg font-bold rounded-2xl transition-all shadow-sm"
     >
       Ver Tecnología
@@ -116,7 +118,11 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
       <img
         src={HERO_IMAGE}
         alt="Inspección técnica de tuberías"
+        width={800}
+        height={533}
         className="w-full h-full object-cover object-center scale-110 opacity-80 group-hover:opacity-60 transition-all duration-[3s]"
+        loading="eager"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#16a34a1a_1px,transparent_1px),linear-gradient(to_bottom,#16a34a1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 z-10" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30 z-10" />

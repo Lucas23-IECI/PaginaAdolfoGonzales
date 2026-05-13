@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                 <LogoIcon className="text-secondary h-8 w-auto" />
               </div>
               <div>
-                <h2 className="text-xl font-extrabold leading-none tracking-tight text-white">Adolfo Gonzalez</h2>
+                <span className="block text-xl font-extrabold leading-none tracking-tight text-white">Adolfo Gonzalez</span>
                 <span className="text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">
                   Especialista
                 </span>
@@ -66,6 +66,7 @@ const Footer: React.FC = () => {
                   href={`https://wa.me/${PHONE_RAW}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Contactar por WhatsApp"
                   className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-sm"
                 >
                   <WhatsAppIcon size={18} />
@@ -74,6 +75,7 @@ const Footer: React.FC = () => {
                   href={`mailto:${EMAIL}?subject=Consulta%20sobre%20Detección%20de%20Fugas`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Enviar correo electrónico"
                   className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300 shadow-sm"
                 >
                   <Mail size={18} />

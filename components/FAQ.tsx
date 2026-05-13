@@ -87,7 +87,7 @@ const FAQ: React.FC = () => {
             >
               <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
-                <h4 className="text-xl font-bold text-primary mb-3">¿Tienes un caso particular?</h4>
+                <h3 className="text-xl font-bold text-primary mb-3">¿Tienes un caso particular?</h3>
                 <p className="text-slate-500 mb-6 text-sm leading-relaxed">Si tu problema no está descrito aquí, envíame un mensaje o foto por WhatsApp y lo evaluamos sin costo.</p>
                 <a
                   href="https://wa.me/56966795221?text=Hola%20Adolfo%2C%20tengo%20una%20consulta%20sobre%20detección%20de%20fugas."

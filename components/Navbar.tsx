@@ -174,6 +174,7 @@ const Navbar: React.FC = () => {
         <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="absolute top-6 right-6 p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors"
+          aria-label="Cerrar menú"
         >
           <X size={28} />
         </button>
