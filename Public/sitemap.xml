@@ -3,7 +3,7 @@
 
   <!-- Página Principal -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Sección Servicios (anchor) -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#servicios</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/#servicios</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- Sección Portafolio / Resultados (anchor) -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#portafolio</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/#portafolio</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Sección FAQ (anchor) -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#faq</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/#faq</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -35,7 +35,7 @@
 
   <!-- Sección Contacto (anchor) -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#contacto</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/#contacto</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,7 +43,7 @@
 
   <!-- Política de Privacidad -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/privacidad</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/privacidad</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -51,7 +51,7 @@
 
   <!-- Términos y Condiciones -->
   <url>
-    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/terminos</loc>
+    <loc>https://pagina-adolfo-gonzales.vercel.app/terminos</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

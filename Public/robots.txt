@@ -10,7 +10,7 @@ Disallow: /.git/
 Disallow: /src/
 
 # Indicar ubicación del Sitemap
-Sitemap: https://lucas23-ieci.github.io/PaginaAdolfoGonzales/sitemap.xml
+Sitemap: https://pagina-adolfo-gonzales.vercel.app/sitemap.xml
 
 # Crawl-delay sugerido (cortesía con el servidor)
 Crawl-delay: 10
