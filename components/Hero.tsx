@@ -51,7 +51,7 @@ const BadgeBlock = () => (
 const HeadlineBlock = () => (
   <motion.h1 
     variants={fadeUp} 
-    className="text-4xl sm:text-6xl lg:text-[6.5rem] font-black text-slate-900 leading-[1] lg:leading-[0.9] tracking-[-0.04em] relative"
+    className="hero-title font-black text-slate-900 leading-[1] lg:leading-[0.9] tracking-[-0.04em] relative sm:text-6xl lg:text-[6.5rem]"
   >
     <span className="block mb-1 sm:mb-2">Localizamos</span>
     <span className="block mb-1 sm:mb-2 text-slate-400">la fuga,</span>

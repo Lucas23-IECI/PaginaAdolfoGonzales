@@ -33,3 +33,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Hero title: fluid scaling on mobile to prevent collision with image */
+@media (max-width: 639px) {
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+  }
+}
