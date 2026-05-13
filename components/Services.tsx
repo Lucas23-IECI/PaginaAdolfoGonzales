@@ -18,7 +18,7 @@ const services: Service[] = [
   {
     icon: ShieldCheck,
     title: 'Certificación SEC y Gas',
-    description: 'Instaladores autorizados por la <a href="https://www.sec.cl/" target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 hover:decoration-white transition-colors" title="Superintendencia de Electricidad y Combustibles">SEC</a>. Realizamos Declaración de Instalación de Gas (TC6), Tramitación Sello Verde, Redes de Gas bajo normalización, Fugas de Gas y Reparación/Instalación de Calefont.',
+    description: <>Instaladores autorizados por la <a href="https://www.sec.cl/" target="_blank" rel="noopener noreferrer" className="underline decoration-white/30 hover:decoration-white transition-colors" title="Superintendencia de Electricidad y Combustibles">SEC</a>. Realizamos Declaración de Instalación de Gas (TC6), Tramitación Sello Verde, Redes de Gas bajo normalización, Fugas de Gas y Reparación/Instalación de Calefont.</>,
     colSpan: 'lg:col-span-6',
     bgClass: 'bg-primary text-white border-transparent',
     textClass: '',
@@ -29,7 +29,7 @@ const services: Service[] = [
   {
     icon: Headphones,
     title: 'Tecnología Acústica de Precisión',
-    description: 'Utilizamos <a href="https://es.wikipedia.org/wiki/Ge%C3%B3fono" target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 hover:decoration-white transition-colors" title="Información sobre Geófonos">geófonos</a> de alta sensibilidad que "escuchan" la fuga a través del concreto, localizándola con precisión milimétrica.',
+    description: <>Utilizamos <a href="https://es.wikipedia.org/wiki/Ge%C3%B3fono" target="_blank" rel="noopener noreferrer" className="underline decoration-white/30 hover:decoration-white transition-colors" title="Información sobre Geófonos">geófonos</a> de alta sensibilidad que "escuchan" la fuga a través del concreto, localizándola con precisión milimétrica.</>,
     colSpan: 'lg:col-span-6',
     bgClass: 'bg-primary text-white border-transparent',
     textClass: '',
@@ -40,7 +40,7 @@ const services: Service[] = [
   {
     icon: Wrench,
     title: 'Gasfitería Integral',
-    description: '<a href="#contacto" class="underline decoration-slate-300 hover:decoration-primary hover:text-primary transition-colors" title="Contactar para trabajos de gasfitería">Trabajos</a> en PPR, PEX, COBRE y PVC. Instalación de Redes de Agua, Griferías, Sanitarias y Calefacción Central.',
+    description: <><a href="#contacto" className="underline decoration-slate-300 hover:decoration-primary hover:text-primary transition-colors" title="Contactar para trabajos de gasfitería">Trabajos</a> en PPR, PEX, COBRE y PVC. Instalación de Redes de Agua, Griferías, Sanitarias y Calefacción Central.</>,
     colSpan: 'lg:col-span-3',
     bgClass: 'bg-white text-slate-900 border-slate-200/60',
     textClass: '',

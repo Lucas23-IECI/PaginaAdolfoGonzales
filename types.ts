@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface NavItem {
   label: string;
   href: string;
@@ -6,7 +8,7 @@ export interface NavItem {
 export interface Service {
   icon: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
   popular?: boolean;
 }
 
