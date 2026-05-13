@@ -94,8 +94,8 @@ const Services: React.FC = () => {
     <section id="servicios" className="relative py-32 overflow-hidden bg-transparent">
       {/* Background Decor */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-      <div className="absolute -left-[20%] top-[20%] w-[50vw] h-[50vw] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute -right-[10%] bottom-[10%] w-[40vw] h-[40vw] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -left-[20%] top-[20%] w-[50vw] h-[50vw] bg-[radial-gradient(circle,rgba(22,163,74,0.04)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute -right-[10%] bottom-[10%] w-[40vw] h-[40vw] bg-[radial-gradient(circle,rgba(15,90,59,0.03)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
