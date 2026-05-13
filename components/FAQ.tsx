@@ -40,7 +40,7 @@ const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0); // Abierto por defecto el primero para guiar al usuario
 
   return (
-    <section id="faq" className="py-32 bg-transparent relative overflow-hidden">
+    <section id="faq" className="py-32 bg-gradient-to-b from-transparent via-[#f0fdf4]/50 to-transparent relative overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 

@@ -85,6 +85,8 @@ const Navbar: React.FC = () => {
             : 'bg-transparent py-5'
         }`}
       >
+        {/* Línea decorativa verde superior */}
+        <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0f5a3b] via-[#16a34a] to-[#4ade80] transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
 
@@ -128,7 +130,7 @@ const Navbar: React.FC = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary hover:bg-secondary transition-colors text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md flex items-center gap-2"
+                className="bg-gradient-to-r from-[#0f5a3b] to-[#16a34a] hover:from-[#16a34a] hover:to-[#22c55e] transition-all text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md hover:shadow-[0_8px_20px_-4px_rgba(22,163,74,0.4)] flex items-center gap-2"
               >
                 <WhatsAppIcon size={18} />
                 Pedir Presupuesto
@@ -177,7 +179,7 @@ const Navbar: React.FC = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white text-lg font-bold rounded-xl"
+            className="mt-8 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#0f5a3b] to-[#16a34a] text-white text-lg font-bold rounded-xl shadow-lg"
           >
             <WhatsAppIcon size={22} />
             Pedir Presupuesto

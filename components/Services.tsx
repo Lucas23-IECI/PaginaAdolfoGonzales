@@ -147,16 +147,21 @@ const Services: React.FC = () => {
             <motion.div
               key={index}
               variants={fadeUp}
-              className={`group relative flex flex-col justify-between p-8 sm:p-10 rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 border ${service.colSpan} ${service.bgClass} shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl`}
+              className={`group relative flex flex-col justify-between p-8 sm:p-10 rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 border ${service.colSpan} ${service.bgClass} shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl ${!service.bgClass.includes('bg-primary') ? 'hover:border-[#16a34a]/30' : ''}`}
             >
               {/* Background gradient overlay for depth */}
               {service.bgClass.includes('bg-primary') && (
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               )}
+
+              {/* Línea lateral verde para cards blancas */}
+              {!service.bgClass.includes('bg-primary') && (
+                <div className="absolute top-0 left-0 w-1 h-0 bg-gradient-to-b from-[#16a34a] to-[#4ade80] group-hover:h-full transition-all duration-700 rounded-full" />
+              )}
               
               {/* Top Section */}
               <div className="relative z-10 flex justify-between items-start mb-16">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ${service.iconClass}`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ${service.iconClass} ${!service.bgClass.includes('bg-primary') ? 'group-hover:bg-[#16a34a]/10 group-hover:text-[#16a34a] group-hover:border-[#16a34a]/20' : ''}`}>
                   <service.icon size={26} strokeWidth={2} />
                 </div>
 

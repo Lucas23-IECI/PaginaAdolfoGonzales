@@ -35,6 +35,8 @@ const Footer: React.FC = () => {
       id="footer"
       className="bg-slate-950 text-white pt-24 pb-8 relative overflow-hidden"
     >
+      {/* Línea decorativa verde superior */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#16a34a] to-transparent opacity-60" />
       {/* Glow Effects */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] pointer-events-none" />

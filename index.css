@@ -16,11 +16,17 @@ body {
   background: #f0fdf4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0f5a3b;
+  background: linear-gradient(180deg, #0f5a3b, #16a34a, #4ade80);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #093d28;
+  background: linear-gradient(180deg, #093d28, #0f5a3b, #16a34a);
+}
+
+/* Text selection color */
+::selection {
+  background: #16a34a;
+  color: white;
 }
 
 /* Smooth anchor scrolling */
