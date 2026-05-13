@@ -5,22 +5,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const portfolioItems: PortfolioItem[] = [
   {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/deteccion_subterranea_v2.png',
     alt:   'Detección de fuga en cañería subterránea',
     title: 'Detección Subterránea',
     description: 'Localización a 80cm de profundidad sin excavar el jardín completo.',
+    whatsappText: 'Hola Adolfo, me interesa el servicio de Detección Subterránea que vi en la galería de fotos. ¿Me puede orientar?',
   },
   {
-    image: 'https://images.unsplash.com/photo-1583394293214-3ef6d47e3bf4?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/tecnico_geofono_v2.png',
     alt:   'Técnico detectando fuga con geófono acústico',
     title: 'Precisión Acústica',
     description: 'Diagnóstico con geófono para evitar daños colaterales.',
+    whatsappText: 'Hola Adolfo, me interesa la detección con Precisión Acústica (Geófono) que vi en la galería de fotos. ¿Me puede orientar?',
   },
   {
-    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/fuga_losa_v2.png',
     alt:   'Detección de fuga en losa de hormigón',
     title: 'Fugas en Losa',
     description: 'Intervención milimétrica en losa de hormigón residencial.',
+    whatsappText: 'Hola Adolfo, me interesa la detección de Fugas en Losa que vi en la galería de fotos. ¿Me puede orientar?',
   },
 ];
 
@@ -97,13 +100,16 @@ const Portfolio: React.FC = () => {
             </button>
             
             {/* Floating Info Box for Featured */}
-            <div className="absolute -bottom-8 lg:bottom-12 -right-4 lg:-right-16 bg-white/90 backdrop-blur-xl p-8 rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white max-w-[320px] pointer-events-none z-20 transition-transform duration-500 group-hover:-translate-y-2">
-              <h3 className="text-2xl font-extrabold text-primary mb-2">{portfolioItems[0].title}</h3>
-              <p className="text-slate-600 leading-relaxed">{portfolioItems[0].description}</p>
-              <div className="mt-6 flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-xs">
-                <ZoomIn size={16} /> Ver Detalles
+            <button 
+              onClick={() => setSelected(portfolioItems[0])}
+              className="absolute text-left top-4 sm:top-8 lg:top-auto lg:bottom-28 right-2 sm:right-4 lg:-right-16 bg-white/90 backdrop-blur-xl p-5 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] z-20 transition-transform duration-500 group-hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-secondary/50 cursor-pointer hover:bg-white"
+            >
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-primary mb-1.5 lg:mb-2">{portfolioItems[0].title}</h3>
+              <p className="text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed">{portfolioItems[0].description}</p>
+              <div className="mt-3 lg:mt-6 flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-[10px] sm:text-xs group-hover:text-primary transition-colors">
+                <ZoomIn size={14} className="lg:w-4 lg:h-4" /> Ver Detalles
               </div>
-            </div>
+            </button>
           </motion.div>
 
           {/* Right Column: Two stacked smaller items */}
@@ -209,7 +215,7 @@ const Portfolio: React.FC = () => {
                 <p className="text-slate-600 leading-relaxed text-lg mb-8">{selected.description}</p>
                 
                 <a
-                  href="https://wa.me/56966795221"
+                  href={`https://wa.me/56966795221?text=${encodeURIComponent(selected.whatsappText || 'Hola Adolfo, necesito detectar una fuga de agua. ¿Puede ayudarme?')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-secondary transition-colors"

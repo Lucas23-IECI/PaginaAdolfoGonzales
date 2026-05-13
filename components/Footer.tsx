@@ -69,7 +69,9 @@ const Footer: React.FC = () => {
                   <WhatsAppIcon size={18} />
                 </a>
                 <a
-                  href={`mailto:${EMAIL}`}
+                  href={`mailto:${EMAIL}?subject=Consulta%20sobre%20Detección%20de%20Fugas`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300 shadow-sm"
                 >
                   <Mail size={18} />
@@ -126,7 +128,12 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${EMAIL}`} className="group flex flex-col gap-1">
+                <a 
+                  href={`mailto:${EMAIL}?subject=Consulta%20sobre%20Detección%20de%20Fugas`} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col gap-1"
+                >
                   <span className="text-slate-500 text-xs font-medium">Correo Electrónico</span>
                   <span className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                     {EMAIL}
@@ -162,6 +169,9 @@ const Footer: React.FC = () => {
                 PuroCode
               </a>
             </p>
+            <a href="https://www.puragenda.cl" target="_blank" rel="noopener noreferrer" aria-label="Puragenda" className="text-slate-900/10 text-[8px] select-none pointer-events-none">
+              puragenda
+            </a>
           </div>
         </div>
       </div>

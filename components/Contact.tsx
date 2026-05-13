@@ -209,7 +209,9 @@ const Contact: React.FC = () => {
                 </a>
 
                 <a
-                  href={`mailto:${EMAIL}`}
+                  href={`mailto:${EMAIL}?subject=Consulta%20sobre%20Detección%20de%20Fugas`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-5 group"
                 >
                   <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary transition-all backdrop-blur-sm border border-white/20">

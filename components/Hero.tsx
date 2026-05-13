@@ -133,8 +133,8 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
         <div className="bg-white/90 backdrop-blur-2xl p-6 rounded-3xl shadow-xl border border-white/50 flex items-center gap-5 w-max">
           <SonarWave />
           <div className="min-w-0">
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Módulo Acústico</p>
-            <p className="text-base font-black text-slate-800">Analizando terreno...</p>
+            <p className={`${isMobile ? 'text-xs' : 'text-[10px]'} font-black text-slate-400 uppercase tracking-[0.2em] mb-1`}>Módulo Acústico</p>
+            <p className={`${isMobile ? 'text-xl' : 'text-base'} font-black text-slate-800`}>Analizando terreno...</p>
             <div className="flex gap-1.5 mt-2">
               <div className="h-2 w-12 bg-[#16a34a] rounded-full overflow-hidden relative">
                  <div className="absolute inset-0 bg-white/40 animate-[shimmer_1s_infinite] -translate-x-full"></div>
@@ -161,12 +161,12 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
               <Droplet size={18} className="text-[#22c55e]" />
             </div>
             <div className="flex flex-col items-end min-w-0">
-              <span className="text-[10px] font-bold text-[#16a34a] uppercase">Tasa de Éxito</span>
-              <span className="text-lg font-black text-white">99.9%</span>
+              <span className={`${isMobile ? 'text-xs' : 'text-[10px]'} font-bold text-[#16a34a] uppercase`}>Tasa de Éxito</span>
+              <span className={`${isMobile ? 'text-2xl' : 'text-lg'} font-black text-white`}>99.9%</span>
             </div>
           </div>
           <div className="w-full h-px bg-gradient-to-r from-[#16a34a]/50 to-transparent my-2" />
-          <p className="text-white font-bold leading-tight text-sm">Garantía de daño cero en infraestructuras.</p>
+          <p className={`text-white font-bold leading-tight ${isMobile ? 'text-base' : 'text-sm'}`}>Garantía de daño cero en infraestructuras.</p>
         </div>
       </div>
     </motion.div>
