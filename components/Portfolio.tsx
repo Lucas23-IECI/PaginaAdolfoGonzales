@@ -83,7 +83,7 @@ const Portfolio: React.FC = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 relative group"
+            className="lg:col-span-7 relative group lg:self-start"
           >
             <button 
               onClick={() => setSelected(portfolioItems[0])}
@@ -102,11 +102,11 @@ const Portfolio: React.FC = () => {
             {/* Floating Info Box for Featured */}
             <button 
               onClick={() => setSelected(portfolioItems[0])}
-              className="absolute text-left top-4 sm:top-8 lg:top-auto lg:bottom-28 right-2 sm:right-4 lg:-right-16 bg-white/90 backdrop-blur-xl p-5 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] z-20 transition-transform duration-500 group-hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-secondary/50 cursor-pointer hover:bg-white"
+              className="absolute text-left -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-top-8 lg:-left-8 bg-white/90 backdrop-blur-xl p-5 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] z-20 transition-transform duration-500 group-hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-secondary/50 cursor-pointer hover:bg-white"
             >
               <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-primary mb-1.5 lg:mb-2">{portfolioItems[0].title}</h3>
               <p className="text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed">{portfolioItems[0].description}</p>
-              <div className="mt-3 lg:mt-6 flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-[10px] sm:text-xs group-hover:text-primary transition-colors">
+              <div className="mt-3 lg:mt-6 flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-xs sm:text-sm group-hover:text-primary transition-colors">
                 <ZoomIn size={14} className="lg:w-4 lg:h-4" /> Ver Detalles
               </div>
             </button>
@@ -115,7 +115,7 @@ const Portfolio: React.FC = () => {
           {/* Right Column: Two stacked smaller items */}
           <div className="lg:col-span-5 flex flex-col gap-12 lg:gap-20 mt-20 lg:mt-32">
             
-            {/* Second Item */}
+            {/* Second Item - Precisión Acústica */}
             <motion.div 
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -124,29 +124,27 @@ const Portfolio: React.FC = () => {
             >
               <button 
                 onClick={() => setSelected(portfolioItems[1])}
-                className="w-full text-left relative rounded-3xl overflow-hidden shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block"
+                className="w-full text-left relative rounded-3xl shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block"
               >
-                <div className="aspect-[4/3] w-full">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
                   <img 
                     src={portfolioItems[1].image} 
                     alt={portfolioItems[1].alt}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                   />
                 </div>
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-white text-xl font-bold mb-2">{portfolioItems[1].title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{portfolioItems[1].description}</p>
-                  </div>
-                  <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-md p-3 rounded-full text-white">
-                    <ArrowUpRight size={20} />
+                {/* Floating Info Box - Precisión Acústica (Superior Izquierda) */}
+                <div className="absolute text-left -top-12 -left-4 sm:-top-12 sm:-left-4 lg:-top-16 lg:-left-8 bg-white/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl shadow-[0_10px_20px_-10px_rgba(0,0,0,0.15)] border border-white max-w-[200px] sm:max-w-[240px] z-20 transition-transform duration-500 group-hover:-translate-y-2">
+                  <h3 className="text-base sm:text-lg font-extrabold text-primary mb-1">{portfolioItems[1].title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">{portfolioItems[1].description}</p>
+                  <div className="mt-2.5 flex items-center gap-1.5 text-secondary font-bold uppercase tracking-wider text-xs group-hover:text-primary transition-colors">
+                    <ZoomIn size={14} className="w-3.5 h-3.5" /> Ver Detalles
                   </div>
                 </div>
               </button>
             </motion.div>
 
-            {/* Third Item */}
+            {/* Third Item - Fugas en Losa */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -155,23 +153,21 @@ const Portfolio: React.FC = () => {
             >
               <button 
                 onClick={() => setSelected(portfolioItems[2])}
-                className="w-full text-left relative rounded-3xl overflow-hidden shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block border-8 border-white"
+                className="w-full text-left relative rounded-3xl shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block border-8 border-white"
               >
-                <div className="aspect-square w-full">
+                <div className="aspect-square w-full overflow-hidden rounded-[calc(1.5rem-8px)]">
                   <img 
                     src={portfolioItems[2].image} 
                     alt={portfolioItems[2].alt}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                   />
                 </div>
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-white text-xl font-bold mb-2">{portfolioItems[2].title}</h3>
-                    <p className="text-white/90 text-sm leading-relaxed">{portfolioItems[2].description}</p>
-                  </div>
-                  <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-md p-3 rounded-full text-white">
-                    <ArrowUpRight size={20} />
+                {/* Floating Info Box - Fugas en Losa (Inferior Izquierda) */}
+                <div className="absolute text-left -bottom-4 -left-2 sm:-bottom-4 sm:-left-2 lg:-bottom-6 lg:-left-6 bg-white/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl shadow-[0_10px_20px_-10px_rgba(0,0,0,0.15)] border border-white max-w-[180px] sm:max-w-[220px] z-20 transition-transform duration-500 group-hover:-translate-y-2">
+                  <h3 className="text-sm sm:text-base font-extrabold text-primary mb-1">{portfolioItems[2].title}</h3>
+                  <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2">{portfolioItems[2].description}</p>
+                  <div className="mt-2 flex items-center gap-1.5 text-secondary font-bold uppercase tracking-wider text-[11px] sm:text-xs group-hover:text-primary transition-colors">
+                    <ZoomIn size={14} className="w-3.5 h-3.5" /> Ver Detalles
                   </div>
                 </div>
               </button>
@@ -197,14 +193,14 @@ const Portfolio: React.FC = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              className="relative max-w-5xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="md:w-2/3">
+              <div className="md:w-2/3 shrink-0">
                 <img
                   src={selected.image}
                   alt={selected.alt}
-                  className="w-full h-full object-cover max-h-[50vh] md:max-h-[80vh]"
+                  className="w-full h-48 md:h-full object-cover md:max-h-[80vh]"
                 />
               </div>
               <div className="md:w-1/3 p-8 md:p-12 flex flex-col justify-center bg-slate-50">
