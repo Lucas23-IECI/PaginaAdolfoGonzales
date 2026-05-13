@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
                 PuroCode
               </a>
             </p>
-            <a href="https://www.puragenda.cl" target="_blank" rel="noopener noreferrer" aria-label="Puragenda" className="text-slate-900/10 text-[8px] select-none pointer-events-none">
+            <a href="https://www.puragenda.cl" target="_blank" rel="noopener noreferrer" aria-label="Puragenda" className="text-slate-900/10 text-xs select-none pointer-events-none">
               puragenda
             </a>
           </div>

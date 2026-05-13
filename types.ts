@@ -20,5 +20,6 @@ export interface PortfolioItem {
   alt: string;
   title: string;
   description: string;
+  fullDescription?: string;
   whatsappText?: string;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ZoomIn, ArrowUpRight } from 'lucide-react';
 import { PortfolioItem } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,6 +9,7 @@ const portfolioItems: PortfolioItem[] = [
     alt:   'Detección de fuga en cañería subterránea',
     title: 'Detección Subterránea',
     description: 'Localización a 80cm de profundidad sin excavar el jardín completo.',
+    fullDescription: 'Utilizando nuestro Radar Acústico 3D de última generación, realizamos un barrido completo del terreno para localizar fugas subterráneas hasta a 80cm de profundidad. Este servicio te permite saber el punto exacto del problema sin tener que destrozar tu jardín o entradas vehiculares a ciegas.',
     whatsappText: 'Hola Adolfo, me interesa el servicio de Detección Subterránea que vi en la galería de fotos. ¿Me puede orientar?',
   },
   {
@@ -16,6 +17,7 @@ const portfolioItems: PortfolioItem[] = [
     alt:   'Técnico detectando fuga con geófono acústico',
     title: 'Precisión Acústica',
     description: 'Diagnóstico con geófono para evitar daños colaterales.',
+    fullDescription: 'A través de tecnología de amplificación sónica (Geófono Profesional), el técnico escucha las frecuencias de alta presión generadas por fugas invisibles dentro de muros o pisos. Al aislar el sonido, detectamos el punto de rotura con un 99% de precisión milimétrica.',
     whatsappText: 'Hola Adolfo, me interesa la detección con Precisión Acústica (Geófono) que vi en la galería de fotos. ¿Me puede orientar?',
   },
   {
@@ -23,12 +25,24 @@ const portfolioItems: PortfolioItem[] = [
     alt:   'Detección de fuga en losa de hormigón',
     title: 'Fugas en Losa',
     description: 'Intervención milimétrica en losa de hormigón residencial.',
+    fullDescription: 'Las fugas en losas de hormigón y losas radiantes son las más críticas. Intervenimos exactamente en la cerámica o área afectada combinando termografía y acústica, minimizando el impacto estético y reduciendo drásticamente los costos de reconstrucción.',
     whatsappText: 'Hola Adolfo, me interesa la detección de Fugas en Losa que vi en la galería de fotos. ¿Me puede orientar?',
   },
 ];
 
 const Portfolio: React.FC = () => {
   const [selected, setSelected] = useState<PortfolioItem | null>(null);
+
+  useEffect(() => {
+    if (selected) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selected]);
 
   return (
     <section id="portafolio" className="py-32 bg-transparent relative overflow-hidden">
@@ -208,7 +222,7 @@ const Portfolio: React.FC = () => {
                   <ZoomIn size={20} />
                 </div>
                 <h3 className="text-3xl font-extrabold text-primary mb-4 leading-tight">{selected.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-lg mb-8">{selected.description}</p>
+                <p className="text-slate-600 leading-relaxed text-lg mb-8">{selected.fullDescription || selected.description}</p>
                 
                 <a
                   href={`https://wa.me/56966795221?text=${encodeURIComponent(selected.whatsappText || 'Hola Adolfo, necesito detectar una fuga de agua. ¿Puede ayudarme?')}`}

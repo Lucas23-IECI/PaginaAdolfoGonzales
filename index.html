@@ -13,6 +13,7 @@
     <meta property="og:title" content="Adolfo Gonzalez — Detección de Fugas de Agua Potable" />
     <meta property="og:description" content="Especialista en detección de fugas de agua potable en Concepción y alrededores. 10 años de experiencia. Sin romper paredes ni pisos." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pagina-adolfo-gonzales.vercel.app/" />
     <meta property="og:locale" content="es_CL" />
     <meta property="og:image" content="/Fotos/og-image.jpg" />
 
@@ -30,38 +31,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "primary":          "#0f5a3b",
-              "primary-dark":     "#093d28",
-              "secondary":        "#16a34a",
-              "background-light": "#FFFFFF",
-              "background-alt":   "#f0fdf4",
-              "background-dark":  "#0d1f17",
-            },
-            fontFamily: {
-              "sans": ["Manrope", "sans-serif"],
-            },
-            keyframes: {
-              shimmer: {
-                "100%": { transform: "translateX(100%)" },
-              },
-              scan: {
-                "0%, 100%": { transform: "translateY(-10%)" },
-                "50%": { transform: "translateY(110%)" },
-              }
-            },
-            animation: {
-              shimmer: "shimmer 1.5s infinite",
-              scan: "scan 3s ease-in-out infinite",
-            },
-          },
+    <!-- Schema.org (JSON-LD) para SEO Local -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Plumber",
+        "name": "Adolfo Gonzalez - Gasfiter",
+        "image": "https://pagina-adolfo-gonzales.vercel.app/Fotos/og-image.jpg",
+        "@id": "",
+        "url": "https://pagina-adolfo-gonzales.vercel.app/",
+        "telephone": "+56966795221",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Concepción",
+          "addressRegion": "Biobío",
+          "addressCountry": "CL"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -36.82699,
+          "longitude": -73.04977
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        "sameAs": [
+          "https://wa.me/56966795221"
+        ],
+        "description": "Especialista en detección de fugas de agua potable en Concepción. Tecnología de precisión acústica y radar subterráneo."
       }
     </script>
     <style>

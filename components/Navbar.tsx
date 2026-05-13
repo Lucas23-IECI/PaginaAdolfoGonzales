@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
                 <span className="text-primary text-xl font-bold tracking-tight leading-none">
                   Adolfo Gonzalez
                 </span>
-                <span className="text-secondary text-[10px] font-bold tracking-[0.15em] uppercase">
+                <span className="text-secondary text-xs font-bold tracking-[0.1em] uppercase">
                   Detección de Fugas
                 </span>
               </div>
@@ -157,6 +157,20 @@ const Navbar: React.FC = () => {
             : 'opacity-0 translate-x-full pointer-events-none'
         }`}
       >
+        <div className="absolute top-6 left-6 flex items-center gap-3">
+          <div className="bg-primary p-2 rounded-lg shadow-sm">
+            <LogoIcon className="text-white h-6 w-auto" />
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-primary text-xl font-bold tracking-tight leading-none">
+              Adolfo Gonzalez
+            </span>
+            <span className="text-secondary text-[10px] font-bold tracking-[0.1em] uppercase">
+              Detección de Fugas
+            </span>
+          </div>
+        </div>
+
         <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="absolute top-6 right-6 p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors"

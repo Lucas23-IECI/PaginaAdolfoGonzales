@@ -75,8 +75,8 @@ const SubtitleBlock = () => (
     variants={fadeUp} 
     className="text-sm sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-medium mt-2 border-l-4 border-[#16a34a] pl-4 lg:pl-6"
   >
-    <strong className="text-slate-900 block mb-1.5 lg:mb-2">10 años de experiencia en el rubro de la gasfitería y detectando filtraciones de agua potable.</strong>
-    Dile adiós a los gasfiteros que rompen para buscar. Con nuestro sistema de <strong className="text-slate-900 font-extrabold bg-[#16a34a]/10 px-1.5 py-0.5 rounded">Radar Acústico 3D</strong>, sabemos exactamente dónde está el problema antes de tocar una herramienta.
+    <strong className="text-slate-900 block mb-1.5 lg:mb-2">10 años de experiencia en el rubro de la gasfitería y <a href="#portafolio" className="underline decoration-[#16a34a]/30 hover:decoration-[#16a34a] transition-colors" title="Ver casos de éxito de filtraciones">detectando filtraciones</a> de agua potable.</strong>
+    Dile adiós a los gasfiteros que rompen para buscar. Con nuestro <a href="#servicios" className="underline decoration-[#16a34a]/30 hover:decoration-[#16a34a] transition-colors" title="Ver servicios de radar acústico">sistema</a> de <strong className="text-slate-900 font-extrabold bg-[#16a34a]/10 px-1.5 py-0.5 rounded">Radar Acústico 3D</strong>, sabemos exactamente dónde está el problema antes de tocar una herramienta.
   </motion.p>
 );
 
@@ -133,7 +133,7 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
         <div className="bg-white/90 backdrop-blur-2xl p-6 rounded-3xl shadow-xl border border-white/50 flex items-center gap-5 w-max">
           <SonarWave />
           <div className="min-w-0">
-            <p className={`${isMobile ? 'text-xs' : 'text-[10px]'} font-black text-slate-400 uppercase tracking-[0.2em] mb-1`}>Módulo Acústico</p>
+            <p className={`${isMobile ? 'text-sm' : 'text-xs'} font-black text-slate-400 uppercase tracking-[0.2em] mb-1`}>Módulo Acústico</p>
             <p className={`${isMobile ? 'text-xl' : 'text-base'} font-black text-slate-800`}>Analizando terreno...</p>
             <div className="flex gap-1.5 mt-2">
               <div className="h-2 w-12 bg-[#16a34a] rounded-full overflow-hidden relative">
@@ -161,7 +161,7 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
               <Droplet size={18} className="text-[#22c55e]" />
             </div>
             <div className="flex flex-col items-end min-w-0">
-              <span className={`${isMobile ? 'text-xs' : 'text-[10px]'} font-bold text-[#16a34a] uppercase`}>Tasa de Éxito</span>
+              <span className={`${isMobile ? 'text-sm' : 'text-xs'} font-bold text-[#16a34a] uppercase`}>Tasa de Éxito</span>
               <span className={`${isMobile ? 'text-2xl' : 'text-lg'} font-black text-white`}>99.9%</span>
             </div>
           </div>
