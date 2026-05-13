@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página Principal -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sección Servicios (anchor) -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#servicios</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sección Portafolio / Resultados (anchor) -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#portafolio</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección FAQ (anchor) -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#faq</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sección Contacto (anchor) -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/#contacto</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Política de Privacidad -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/privacidad</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Términos y Condiciones -->
+  <url>
+    <loc>https://lucas23-ieci.github.io/PaginaAdolfoGonzales/terminos</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,26 @@
+# robots.txt — Adolfo Gonzalez, Detección de Fugas
+# Permitir acceso completo a todos los bots de búsqueda
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos internos innecesarios para indexación
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+
+# Indicar ubicación del Sitemap
+Sitemap: https://lucas23-ieci.github.io/PaginaAdolfoGonzales/sitemap.xml
+
+# Crawl-delay sugerido (cortesía con el servidor)
+Crawl-delay: 10
+
+# Reglas específicas para Googlebot (sin restricción de delay)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Reglas específicas para Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
