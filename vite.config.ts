@@ -14,4 +14,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
     },
   },
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-icons': ['lucide-react'],
+        },
+      },
+    },
+  },
 });
