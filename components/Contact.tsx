@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Clock, ArrowRight, Zap } from 'lucide-react';
+import { Mail, MapPin, Clock, ArrowRight, Zap, CheckCircle } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { motion } from 'framer-motion';
 
 const PHONE_RAW   = '56966795221';
-const PHONE_LABEL = '+56 9 6679 5221';
 const EMAIL       = 'adolfogsoto29@gmail.com';
 
-const zones = ['Concepción', 'Chiguayante', 'Talcahuano', 'San Pedro de la Paz', 'Penco', 'y alrededores'];
+interface Zone {
+  name: string;
+  highlight?: boolean;
+}
+
+const zones: Zone[] = [
+  { name: 'Concepción', highlight: true },
+  { name: 'San Pedro de la Paz', highlight: true },
+  { name: 'Talcahuano', highlight: true },
+  { name: 'Chiguayante', highlight: true },
+  { name: 'Hualpén', highlight: true },
+  { name: 'Penco', highlight: true },
+  { name: 'Tomé', highlight: true },
+  { name: 'Coronel', highlight: true },
+  { name: 'Lota', highlight: true },
+  { name: 'Hualqui', highlight: true },
+];
 
 const TOPICS = [
-  'Fuga en cañería interior',
-  'Fuga en losa o piso radiante',
-  'Fuga en jardín o exterior',
-  'No sé, necesito un diagnóstico',
+  'Filtración de agua oculta (medidor gira)',
+  'Filtración en losa o piso radiante',
+  'Fuga en cañería interior (muro/cielo)',
+  'Rotura en matriz exterior o jardín',
+  'Certificación SEC / Instalación de Gas',
+  'No estoy seguro, necesito diagnóstico',
 ];
 
 const Contact: React.FC = () => {
@@ -31,19 +48,19 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim()) {
-      setErrors({ name: 'El nombre es obligatorio.' });
+      setErrors({ name: 'El nombre es obligatorio para agendar.' });
       return;
     }
 
     const lines = [
-      `Hola Adolfo, necesito coordinar una evaluación técnica.`,
+      `🚨 *SOLICITUD DE EVALUACIÓN TÉCNICA* 🚨`,
       ``,
-      `*Nombre:* ${form.name.trim()}`,
-      `*Tipo de problema:* ${form.topic}`,
+      `*Cliente:* ${form.name.trim()}`,
+      `*Servicio requerido:* ${form.topic}`,
       ``,
       form.message.trim()
-        ? `*Detalles:* ${form.message.trim()}`
-        : `Me gustaría coordinar una visita a la brevedad.`,
+        ? `*Notas del problema:* ${form.message.trim()}`
+        : `*Notas:* Solicito coordinación prioritaria para detectar filtración.`,
     ];
 
     const url = `https://wa.me/${PHONE_RAW}?text=${encodeURIComponent(lines.join('\n'))}`;
@@ -53,7 +70,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contacto" className="py-32 bg-transparent relative overflow-hidden scroll-mt-24">
-      {/* Background Decorators for Light Theme */}
+      {/* Background Decorators */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-primary/5 rounded-[100%] blur-[100px] pointer-events-none opacity-60" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[80px] pointer-events-none" />
 
@@ -69,7 +86,7 @@ const Contact: React.FC = () => {
           >
             <div className="h-px w-12 bg-primary" />
             <span className="text-primary font-bold tracking-widest uppercase text-sm flex items-center gap-2">
-              <Zap size={16} /> Evaluación Técnica
+              <Zap size={16} /> Contacto Inmediato
             </span>
           </motion.div>
           
@@ -79,21 +96,21 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6"
           >
-            Agenda tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic font-serif">diagnóstico.</span>
+            Coordinar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic font-serif">evaluación técnica.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-slate-600 text-lg leading-relaxed max-w-2xl"
+            className="text-slate-600 text-lg leading-relaxed max-w-2xl font-medium"
           >
-            El tiempo es clave para evitar daños estructurales mayores. Completa la información y coordinaremos una visita experta hoy mismo. Presupuesto sin compromiso.
+            Atendemos urgencias ante cualquier <strong className="text-slate-900 font-bold">filtración de agua</strong> con tecnología no destructiva. Ingresa tus datos para derivar tu caso inmediatamente al equipo en terreno en el Gran Concepción.
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
 
-          {/* ── Left: Premium Form (Spans 7 cols) ── */}
+          {/* ── Left: Formulario de Alta Conversión (7 cols) ── */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,13 +120,13 @@ const Contact: React.FC = () => {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="bg-white border border-slate-200 rounded-[2rem] p-8 sm:p-12 shadow-xl shadow-slate-200/50 h-full flex flex-col justify-between"
+              className="bg-white border border-slate-200 rounded-[2.5rem] p-8 sm:p-12 shadow-xl shadow-slate-200/40 h-full flex flex-col justify-between"
             >
               <div className="space-y-6">
                 {/* Nombre */}
                 <div className="relative">
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                    Nombre de contacto <span className="text-primary">*</span>
+                  <label htmlFor="name" className="block text-sm font-bold text-slate-800 mb-2">
+                    Tu Nombre o Empresa <span className="text-primary">*</span>
                   </label>
                   <input
                     id="name"
@@ -118,23 +135,23 @@ const Contact: React.FC = () => {
                     required
                     value={form.name}
                     onChange={handleChange}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 text-base outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/20"
-                    placeholder="Tu nombre completo"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 text-base font-medium outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/20 focus:bg-white"
+                    placeholder="Ej. Juan Pérez"
                   />
                   {errors.name && <p className="text-red-500 text-xs mt-1 absolute">{errors.name}</p>}
                 </div>
 
                 {/* Tipo de problema */}
                 <div className="relative">
-                  <label htmlFor="topic" className="block text-sm font-medium text-slate-700 mb-2">
-                    Naturaleza del problema
+                  <label htmlFor="topic" className="block text-sm font-bold text-slate-800 mb-2">
+                    ¿Qué tipo de problema presentas?
                   </label>
                   <select
                     id="topic"
                     name="topic"
                     value={form.topic}
                     onChange={handleChange}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 text-base outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/20 appearance-none cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 text-base font-medium outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/20 appearance-none cursor-pointer focus:bg-white"
                   >
                     {TOPICS.map((t) => (
                       <option key={t} value={t} className="bg-white text-slate-900">{t}</option>
@@ -144,8 +161,8 @@ const Contact: React.FC = () => {
 
                 {/* Mensaje */}
                 <div className="relative">
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                    Detalles adicionales (opcional)
+                  <label htmlFor="message" className="block text-sm font-bold text-slate-800 mb-2">
+                    Detalles adicionales de la fuga (opcional)
                   </label>
                   <textarea
                     id="message"
@@ -153,109 +170,105 @@ const Contact: React.FC = () => {
                     rows={4}
                     value={form.message}
                     onChange={handleChange}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 text-base outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none"
-                    placeholder="Describe brevemente la filtración..."
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 text-base font-medium outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none focus:bg-white"
+                    placeholder="Indica si es casa o departamento, hace cuánto notas la filtración, etc."
                   />
                 </div>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-10">
                 <button
                   type="submit"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
-                  className="w-full bg-primary hover:bg-secondary text-white font-bold py-4 sm:py-5 rounded-2xl transition-all flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-[0_10px_30px_rgba(15,90,59,0.3)] text-sm sm:text-base lg:text-lg group relative overflow-hidden"
+                  className="w-full bg-primary hover:bg-[#c2410c] text-white font-black py-4 sm:py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/20 text-base sm:text-lg group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                  <WhatsAppIcon size={18} className="shrink-0" />
-                  <span className="whitespace-nowrap">Solicitar Evaluación Inmediata</span>
+                  <WhatsAppIcon size={22} className="shrink-0" />
+                  <span>Enviar a WhatsApp Inmediatamente</span>
                   <motion.div animate={{ x: isHovering ? 5 : 0 }} transition={{ type: "spring" }} className="shrink-0">
-                    <ArrowRight size={16} />
+                    <ArrowRight size={18} />
                   </motion.div>
                 </button>
-                <p className="text-xs text-slate-500 text-center mt-4 font-medium">
-                  Se abrirá WhatsApp de forma segura. No guardamos tus datos.
+                <p className="text-xs text-slate-500 text-center mt-3 font-medium">
+                  Atención prioritaria. Serás redirigido a nuestro chat oficial al instante.
                 </p>
               </div>
             </form>
           </motion.div>
 
-          {/* ── Right: Info Terminal (Spans 5 cols) ── */}
+          {/* ── Right: Bloque de Cobertura y Contacto (5 cols) ── */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 flex flex-col gap-6"
+            className="lg:col-span-5 flex flex-col gap-6 justify-between"
           >
-            {/* Contact Card */}
-            <div className="bg-primary border border-primary-dark p-8 rounded-[2rem] shadow-xl relative overflow-hidden text-white">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/30 rounded-full blur-[40px]" />
-              <h3 className="text-white text-xl font-bold mb-8 relative z-10">Canales Directos</h3>
+            {/* Tarjeta de Cobertura Geográfica Premium */}
+            <div className="bg-slate-900 border border-slate-800 p-8 rounded-[2.5rem] shadow-xl text-white relative overflow-hidden flex-1 flex flex-col justify-between">
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-primary/20 rounded-full blur-[50px] pointer-events-none" />
               
-              <div className="space-y-6 relative z-10">
-                <a
-                  href={`https://wa.me/${PHONE_RAW}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-5 group"
-                >
-                  <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary transition-all backdrop-blur-sm border border-white/20">
-                    <WhatsAppIcon size={24} />
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="bg-primary/20 p-3 rounded-2xl text-primary border border-primary/30">
+                    <MapPin size={24} />
                   </div>
                   <div>
-                    <p className="text-primary-100 text-sm mb-1 opacity-80">Respuesta rápida</p>
-                    <p className="text-white font-bold text-lg group-hover:text-secondary-100 transition-colors">{PHONE_LABEL}</p>
+                    <h3 className="text-white text-xl font-black tracking-tight">Gran Concepción</h3>
+                    <p className="text-xs text-slate-400 font-medium">Despliegue de unidades móviles</p>
                   </div>
-                </a>
+                </div>
 
-                <a
-                  href={`mailto:${EMAIL}?subject=Consulta%20sobre%20Detección%20de%20Fugas`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-5 group"
-                >
-                  <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary transition-all backdrop-blur-sm border border-white/20">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <p className="text-primary-100 text-sm mb-1 opacity-80">Consultas corporativas</p>
-                    <p className="text-white font-bold text-sm sm:text-base group-hover:text-secondary-100 transition-colors">{EMAIL}</p>
-                  </div>
-                </a>
+                <p className="text-sm text-slate-300 mb-6 leading-relaxed">
+                  Garantizamos tiempos de respuesta optimizados cubriendo de manera directa los sectores clave de la Región del Biobío:
+                </p>
+                
+                {/* Listado de comunas solicitadas */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                  {zones.map((zone) => (
+                    <div 
+                      key={zone.name}
+                      className={`flex items-center gap-2 p-2.5 rounded-xl border transition-colors ${
+                        zone.highlight 
+                          ? 'bg-white/5 border-primary/30 text-white font-bold' 
+                          : 'bg-transparent border-slate-800 text-slate-400 font-medium'
+                      }`}
+                    >
+                      <CheckCircle size={14} className={zone.highlight ? 'text-primary shrink-0' : 'text-slate-600 shrink-0'} />
+                      <span className="text-xs sm:text-sm tracking-tight">{zone.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Nota inferior de cobertura */}
+              <div className="pt-4 border-t border-slate-800/80 text-center sm:text-left">
+                <span className="text-[11px] text-slate-400 block font-medium">
+                  ¿Tu comuna no está en la lista? Consulta disponibilidad técnica por interno.
+                </span>
               </div>
             </div>
 
-            {/* Coverage Card */}
-            <div className="bg-white border border-slate-200 p-8 rounded-[2rem] flex-1 shadow-sm">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="bg-primary/10 p-3 rounded-xl text-primary">
-                  <MapPin size={24} />
+            {/* Alternativas de Contacto Directo */}
+            <div className="bg-white border border-slate-200 p-6 sm:p-8 rounded-[2.5rem] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4 text-center sm:text-left">
+                <div className="w-12 h-12 bg-slate-50 text-slate-700 rounded-xl flex items-center justify-center shrink-0 border border-slate-100">
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <h3 className="text-slate-900 text-xl font-bold mb-1">Cobertura</h3>
-                  <p className="text-slate-500 text-sm">Operación en Gran Concepción</p>
+                  <p className="text-xs text-slate-400 font-bold uppercase">Correo Corporativo</p>
+                  <a href={`mailto:${EMAIL}`} className="text-sm sm:text-base font-extrabold text-slate-900 hover:text-primary transition-colors">
+                    {EMAIL}
+                  </a>
                 </div>
               </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {zones.map((zone) => (
-                  <span
-                    key={zone}
-                    className="bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-sm font-medium text-slate-700 hover:bg-primary/5 transition-colors"
-                  >
-                    {zone}
-                  </span>
-                ))}
-              </div>
-            </div>
 
-            {/* Schedule Note */}
-            <div className="flex items-center gap-4 bg-primary/5 border border-primary/10 p-6 rounded-[2rem]">
-              <Clock size={24} className="text-primary shrink-0" />
-              <p className="text-sm text-slate-600">
-                <strong className="text-slate-900 block mb-1">Horario de Operaciones</strong>
-                Atención a convenir de Lunes a Sábado. Respuesta prioritaria ante emergencias.
-              </p>
+              <div className="h-8 w-px bg-slate-200 hidden sm:block" />
+
+              <div className="flex items-center gap-2 text-slate-600 text-xs font-bold bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-100">
+                <Clock size={16} className="text-primary shrink-0" />
+                <span>Lun a Sáb</span>
+              </div>
             </div>
 
           </motion.div>

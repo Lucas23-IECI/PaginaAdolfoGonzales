@@ -8,11 +8,11 @@ const WHATSAPP_LINK =
   'https://wa.me/56966795221?text=Hola%20Adolfo%2C%20necesito%20detectar%20una%20fuga%20de%20agua.%20%C2%BFPuede%20ayudarme%3F';
 
 const navItems: NavItem[] = [
-  { label: 'Inicio',    href: '#inicio' },
-  { label: 'Servicios', href: '#servicios' },
+  { label: 'Inicio',      href: '#inicio' },
+  { label: 'Servicios',   href: '#servicios' },
   { label: 'Portafolio',  href: '#portafolio' },
-  { label: 'FAQ',       href: '#faq' },
-  { label: 'Contacto',  href: '#contacto' },
+  { label: 'FAQ',         href: '#faq' },
+  { label: 'Contacto',    href: '#contacto' },
 ];
 
 /** Inline SVG logo: water drop with sonar rings */
@@ -81,12 +81,12 @@ const Navbar: React.FC = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm py-3'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm py-3 border-b border-slate-100'
             : 'bg-transparent py-5'
         }`}
       >
-        {/* Línea decorativa verde superior */}
-        <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0f5a3b] via-[#16a34a] to-[#4ade80] transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`} />
+        {/* Línea decorativa naranja superior */}
+        <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-secondary to-primary transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
 
@@ -96,15 +96,15 @@ const Navbar: React.FC = () => {
               onClick={(e) => handleNavClick(e, '#')}
               className="flex items-center gap-3 group z-50 relative shrink-0"
             >
-              <div className="bg-primary p-2 rounded-lg shadow-sm">
+              <div className="bg-primary p-2 rounded-xl shadow-md group-hover:scale-105 transition-transform">
                 <LogoIcon className="text-white h-6 w-auto" />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="text-primary text-xl font-bold tracking-tight leading-none">
-                  Adolfo Gonzalez
+                <span className="text-slate-900 text-xl font-black tracking-tight leading-none group-hover:text-primary transition-colors">
+                  Adolfo González
                 </span>
-                <span className="text-secondary text-xs font-bold tracking-[0.1em] uppercase">
-                  Detección de Fugas
+                <span className="text-primary text-[11px] font-extrabold tracking-[0.15em] uppercase mt-0.5">
+                  Detecciones
                 </span>
               </div>
             </a>
@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-slate-700 hover:text-primary text-sm font-semibold transition-colors relative group py-2"
+                  className="text-slate-700 hover:text-primary text-sm font-bold transition-colors relative group py-2"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -130,10 +130,10 @@ const Navbar: React.FC = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#0f5a3b] to-[#16a34a] hover:from-[#16a34a] hover:to-[#22c55e] transition-all text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md hover:shadow-[0_8px_20px_-4px_rgba(22,163,74,0.4)] flex items-center gap-2"
+                className="bg-primary hover:bg-[#c2410c] transition-all text-white px-6 py-3 rounded-xl text-sm font-black shadow-lg hover:shadow-primary/30 flex items-center gap-2 transform hover:scale-105 duration-300"
               >
                 <WhatsAppIcon size={18} />
-                Pedir Presupuesto
+                <span>Contacto Urgencia</span>
               </a>
             </div>
 
@@ -141,7 +141,7 @@ const Navbar: React.FC = () => {
             <button
               className="lg:hidden text-slate-700 p-2 hover:text-primary transition-colors z-[60] relative"
               onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Abrir menú"
+              aria-label="Abrir menú de navegación"
             >
               <Menu size={28} />
             </button>
@@ -158,15 +158,15 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="absolute top-6 left-6 flex items-center gap-3">
-          <div className="bg-primary p-2 rounded-lg shadow-sm">
+          <div className="bg-primary p-2 rounded-xl shadow-md">
             <LogoIcon className="text-white h-6 w-auto" />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-primary text-xl font-bold tracking-tight leading-none">
-              Adolfo Gonzalez
+            <span className="text-slate-900 text-xl font-black tracking-tight leading-none">
+              Adolfo González
             </span>
-            <span className="text-secondary text-[10px] font-bold tracking-[0.1em] uppercase">
-              Detección de Fugas
+            <span className="text-primary text-[11px] font-extrabold tracking-[0.15em] uppercase mt-0.5">
+              Detecciones
             </span>
           </div>
         </div>
@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
         <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="absolute top-6 right-6 p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors"
-          aria-label="Cerrar menú"
+          aria-label="Cerrar menú móvil"
         >
           <X size={28} />
         </button>
@@ -185,7 +185,7 @@ const Navbar: React.FC = () => {
               key={item.label}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="py-4 text-slate-800 text-2xl font-bold border-b border-slate-100"
+              className="py-4 text-slate-800 text-2xl font-black border-b border-slate-100 active:text-primary"
             >
               {item.label}
             </a>
@@ -194,10 +194,10 @@ const Navbar: React.FC = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#0f5a3b] to-[#16a34a] text-white text-lg font-bold rounded-xl shadow-lg"
+            className="mt-8 flex items-center justify-center gap-3 px-6 py-4 bg-primary text-white text-lg font-black rounded-2xl shadow-xl shadow-primary/20"
           >
             <WhatsAppIcon size={22} />
-            Pedir Presupuesto
+            <span>Contacto de Urgencia</span>
           </a>
         </div>
       </div>

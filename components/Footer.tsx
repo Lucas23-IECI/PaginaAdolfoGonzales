@@ -1,11 +1,14 @@
 import React from 'react';
-import { Mail, Shield, FileText, ArrowUpRight } from 'lucide-react';
+import { Mail, Shield, FileText, ArrowUpRight, Zap } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { Link } from 'react-router-dom';
 
 const PHONE_RAW   = '56966795221';
 const PHONE_LABEL = '+56 9 6679 5221';
 const EMAIL       = 'adolfogsoto29@gmail.com';
+
+const WHATSAPP_LINK =
+  'https://wa.me/56966795221?text=Hola%20Adolfo%2C%20necesito%20detectar%20una%20fuga%20de%20agua.%20%C2%BFPuede%20ayudarme%3F';
 
 /** Inline SVG logo for dark background */
 const LogoIcon = ({ className = '' }: { className?: string }) => (
@@ -28,37 +31,69 @@ const LogoIcon = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 
-
 const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="bg-slate-950 text-white pt-24 pb-8 relative overflow-hidden"
+      className="bg-slate-950 text-white pt-20 pb-8 relative overflow-hidden"
     >
-      {/* Línea decorativa verde superior */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#16a34a] to-transparent opacity-60" />
+      {/* Línea decorativa superior */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80" />
+      
       {/* Glow Effects */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* ── CTA DE URGENCIA FINAL (Cierre de Embudo) ── */}
+        <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-black border border-slate-800/80 rounded-3xl p-8 sm:p-12 mb-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left relative overflow-hidden shadow-2xl">
+          <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/10 rounded-full blur-[40px]" />
+          
+          <div className="max-w-xl">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/20 mb-4">
+              <Zap size={12} /> Disponibilidad Inmediata
+            </span>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              ¿Sospechas de una filtración oculta en tu propiedad?
+            </h3>
+            <p className="text-slate-400 text-sm sm:text-base mt-2 font-medium">
+              Actúa a tiempo. Agenda tu evaluación con ultrasonido y cámaras termográficas sin compromisos.
+            </p>
+          </div>
+
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full md:w-auto shrink-0 group relative inline-flex items-center justify-center gap-3 px-8 py-5 bg-primary hover:bg-[#c2410c] text-white text-base sm:text-lg font-black rounded-2xl overflow-hidden transition-all hover:scale-105 shadow-xl hover:shadow-primary/20"
+          >
+            <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+            <WhatsAppIcon size={22} className="relative z-10" />
+            <span className="relative z-10">Chat de Urgencia</span>
+          </a>
+        </div>
+
+        {/* ── CONTENIDO PRINCIPAL DEL FOOTER ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-16">
 
           {/* Brand & Mission */}
           <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="bg-primary/10 p-2.5 rounded-xl border border-primary/20">
-                <LogoIcon className="text-secondary h-8 w-auto" />
+            <div className="flex items-center gap-3">
+              <div className="bg-primary p-2.5 rounded-xl shadow-md">
+                <LogoIcon className="text-white h-7 w-auto" />
               </div>
-              <div>
-                <span className="block text-xl font-extrabold leading-none tracking-tight text-white">Adolfo Gonzalez</span>
-                <span className="text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">
-                  Especialista
+              <div className="flex flex-col leading-tight">
+                <span className="text-white text-xl font-black tracking-tight leading-none">
+                  Adolfo González
+                </span>
+                <span className="text-primary text-[11px] font-extrabold tracking-[0.15em] uppercase mt-0.5">
+                  Detecciones
                 </span>
               </div>
             </div>
-            <p className="text-slate-400 leading-relaxed text-sm font-light">
-              Más de 10 años asegurando la tranquilidad de hogares en el Gran Concepción mediante tecnología acústica no destructiva.
+            <p className="text-slate-400 leading-relaxed text-sm font-medium">
+              Líderes en <strong className="text-white font-bold">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-white font-bold">filtración de agua</strong>. Tecnología avanzada en ultrasonido y termografía para una <strong className="text-white font-bold">detección de filtración</strong> exacta sin romper tu casa.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <div className="flex gap-3">
@@ -66,8 +101,8 @@ const Footer: React.FC = () => {
                   href={`https://wa.me/${PHONE_RAW}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Contactar por WhatsApp"
-                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-sm"
+                  aria-label="Contactar a Adolfo González por WhatsApp"
+                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-sm"
                 >
                   <WhatsAppIcon size={18} />
                 </a>
@@ -75,30 +110,30 @@ const Footer: React.FC = () => {
                   href={`mailto:${EMAIL}?subject=Consulta%20sobre%20Detección%20de%20Fugas`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Enviar correo electrónico"
-                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300 shadow-sm"
+                  aria-label="Enviar correo a Adolfo González"
+                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-300 shadow-sm"
                 >
                   <Mail size={18} />
                 </a>
               </div>
               <div className="hidden sm:block h-10 w-px bg-slate-800/50 mx-1" />
               <div className="flex flex-col">
-                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">Instalador Autorizado</span>
-                <img src="/sec_logo.png" alt="Certificación SEC" className="h-16 w-auto object-contain drop-shadow-md" />
+                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1 ml-1">Certificación SEC</span>
+                <img src="/sec_logo.png" alt="Sello de Certificación SEC" className="h-14 w-auto object-contain drop-shadow-md brightness-90" />
               </div>
             </div>
           </div>
 
           {/* Navigation */}
           <div className="space-y-6">
-            <h3 className="text-xs font-bold text-slate-300 tracking-[0.15em] uppercase">Navegación</h3>
+            <h4 className="text-xs font-bold text-slate-300 tracking-[0.15em] uppercase">Navegación</h4>
             <ul className="space-y-3">
               {[
-                ['Inicio',    '#inicio'     ],
-                ['Servicios', '#servicios'  ],
+                ['Inicio',      '#inicio'     ],
+                ['Servicios',   '#servicios'  ],
                 ['Portafolio',  '#portafolio' ],
-                ['FAQ',       '#faq'        ],
-                ['Contacto',  '#contacto'   ],
+                ['FAQ',         '#faq'        ],
+                ['Contacto',    '#contacto'   ],
               ].map(([label, href]) => (
                 <li key={label}>
                   <a
@@ -115,7 +150,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Details */}
           <div className="space-y-6">
-            <h3 className="text-xs font-bold text-slate-300 tracking-[0.15em] uppercase">Contacto</h3>
+            <h4 className="text-xs font-bold text-slate-300 tracking-[0.15em] uppercase">Línea Directa</h4>
             <ul className="space-y-5">
               <li>
                 <a
@@ -124,8 +159,8 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="group flex flex-col gap-1"
                 >
-                  <span className="text-slate-500 text-xs font-medium">WhatsApp Directo</span>
-                  <span className="text-lg font-semibold text-white group-hover:text-primary transition-colors flex items-center gap-2">
+                  <span className="text-slate-500 text-xs font-medium">WhatsApp Emergencias</span>
+                  <span className="text-lg font-bold text-white group-hover:text-primary transition-colors flex items-center gap-2">
                     {PHONE_LABEL}
                     <ArrowUpRight size={16} className="opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-primary" />
                   </span>
@@ -138,16 +173,16 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="group flex flex-col gap-1"
                 >
-                  <span className="text-slate-500 text-xs font-medium">Correo Electrónico</span>
+                  <span className="text-slate-500 text-xs font-medium">Atención Corporativa</span>
                   <span className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                     {EMAIL}
                   </span>
                 </a>
               </li>
               <li className="flex flex-col gap-1">
-                <span className="text-slate-500 text-xs font-medium">Área de Cobertura</span>
-                <span className="text-sm font-medium text-slate-300">
-                  Concepción, Chiguayante, Talcahuano y alrededores.
+                <span className="text-slate-500 text-xs font-medium">Zonas de Cobertura (Todas las Comunas)</span>
+                <span className="text-xs font-medium text-slate-300 leading-relaxed block">
+                  Concepción, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Coronel, Lota y Hualqui.
                 </span>
               </li>
             </ul>
@@ -156,8 +191,8 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-slate-800/50">
-          <p className="text-slate-600 text-xs font-medium text-center md:text-left">
-            © {new Date().getFullYear()} Adolfo Gonzalez Soto. Todos los derechos reservados.
+          <p className="text-slate-500 text-xs font-medium text-center md:text-left">
+            © {new Date().getFullYear()} Adolfo González Detecciones. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-4 text-slate-500 text-xs font-medium">
             <Link to="/privacidad" className="hover:text-white transition-colors flex items-center gap-1.5">
@@ -166,7 +201,7 @@ const Footer: React.FC = () => {
             <Link to="/terminos" className="hover:text-white transition-colors flex items-center gap-1.5">
               <FileText size={12} /> Términos
             </Link>
-            <span className="hidden md:inline text-slate-700">|</span>
+            <span className="hidden md:inline text-slate-800">|</span>
             <p>
               Diseñado por{' '}
               <a href="https://purocode.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-bold">

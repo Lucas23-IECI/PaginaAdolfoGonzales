@@ -1,61 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { X, ZoomIn, ArrowUpRight } from 'lucide-react';
-import { PortfolioItem } from '../types';
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const portfolioItems: PortfolioItem[] = [
+interface BeforeAfterCase {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  before: {
+    label: string;
+    image: string;
+    desc: string;
+  };
+  after: {
+    label: string;
+    image: string;
+    desc: string;
+  };
+  whatsappText: string;
+}
+
+const cases: BeforeAfterCase[] = [
   {
-    image: '/images/deteccion_subterranea_v2.webp',
-    alt:   'Detección de fuga en cañería subterránea',
-    title: 'Detección Subterránea',
-    description: 'Localización a 80cm de profundidad sin excavar el jardín completo.',
-    fullDescription: 'Utilizando nuestro Radar Acústico 3D de última generación, realizamos un barrido completo del terreno para localizar fugas subterráneas hasta a 80cm de profundidad. Este servicio te permite saber el punto exacto del problema sin tener que destrozar tu jardín o entradas vehiculares a ciegas.',
-    whatsappText: 'Hola Adolfo, me interesa el servicio de Detección Subterránea que vi en la galería de fotos. ¿Me puede orientar?',
+    id: 'losa',
+    title: 'Filtración en Losa de Hormigón',
+    subtitle: 'Intervención milimétrica en interior residencial',
+    description: 'Las fugas bajo losa o cerámicos suelen derivar en demoliciones masivas de cocinas o baños completos. Con nuestra tecnología, acotamos el área a la mínima expresión.',
+    before: {
+      label: 'Detección Exacta',
+      image: '/images/fuga_losa_v2.webp',
+      desc: 'Escaneo térmico y acústico marca el centímetro exacto de la rotura bajo el pavimento.',
+    },
+    after: {
+      label: 'Reparación Quirúrgica',
+      image: '/images/tecnico_geofono_v2.webp',
+      desc: 'Remoción de una sola palmeta de cerámica para termofusionar la cañería dañada.',
+    },
+    whatsappText: 'Hola Adolfo, me interesa el servicio para una fuga en losa/piso como vi en la sección Antes y Después.',
   },
   {
-    image: '/images/tecnico_geofono_v2.webp',
-    alt:   'Técnico detectando fuga con geófono acústico',
-    title: 'Precisión Acústica',
-    description: 'Diagnóstico con geófono para evitar daños colaterales.',
-    fullDescription: 'A través de tecnología de amplificación sónica (Geófono Profesional), el técnico escucha las frecuencias de alta presión generadas por fugas invisibles dentro de muros o pisos. Al aislar el sonido, detectamos el punto de rotura con un 99% de precisión milimétrica.',
-    whatsappText: 'Hola Adolfo, me interesa la detección con Precisión Acústica (Geófono) que vi en la galería de fotos. ¿Me puede orientar?',
-  },
-  {
-    image: '/images/fuga_losa_v2.webp',
-    alt:   'Detección de fuga en losa de hormigón',
-    title: 'Fugas en Losa',
-    description: 'Intervención milimétrica en losa de hormigón residencial.',
-    fullDescription: 'Las fugas en losas de hormigón y losas radiantes son las más críticas. Intervenimos exactamente en la cerámica o área afectada combinando termografía y acústica, minimizando el impacto estético y reduciendo drásticamente los costos de reconstrucción.',
-    whatsappText: 'Hola Adolfo, me interesa la detección de Fugas en Losa que vi en la galería de fotos. ¿Me puede orientar?',
+    id: 'jardin',
+    title: 'Rotura Subterránea en Jardín',
+    subtitle: 'Matriz principal a 80cm de profundidad',
+    description: 'Evitamos el destrozo innecesario de prados, entradas vehiculares o terrazas completas rastreando la onda sonora bajo tierra.',
+    before: {
+      label: 'Rastreo por Ultrasonido',
+      image: '/images/deteccion_subterranea_v2.webp',
+      desc: 'El geófono de alta sensibilidad aísla la frecuencia del agua presurizada escapando.',
+    },
+    after: {
+      label: 'Excavación Puntual',
+      image: '/images/deteccion_subterranea_v2.webp',
+      desc: 'Apertura controlada directa a la cañería matriz para su reemplazo inmediato y sellado.',
+    },
+    whatsappText: 'Hola Adolfo, necesito detectar una fuga subterránea/exterior como vi en la sección Antes y Después.',
   },
 ];
 
 const Portfolio: React.FC = () => {
-  const [selected, setSelected] = useState<PortfolioItem | null>(null);
+  const [activeTab, setActiveTab] = useState<string>('losa');
 
-  useEffect(() => {
-    if (selected) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [selected]);
+  const selectedCase = cases.find(c => c.id === activeTab) || cases[0];
 
   return (
-    <section id="portafolio" className="py-32 bg-transparent relative overflow-hidden">
+    <section id="portafolio" className="py-32 bg-slate-50 relative overflow-hidden scroll-mt-20">
       
       {/* Decorative Text Background */}
-      <div className="absolute top-10 -left-10 text-[10rem] font-extrabold text-slate-50 opacity-50 pointer-events-none select-none tracking-tighter leading-none whitespace-nowrap z-0">
-        RESULTADOS REALES
+      <div className="absolute top-10 -left-10 text-[8rem] sm:text-[10rem] font-extrabold text-slate-200/40 pointer-events-none select-none tracking-tighter leading-none whitespace-nowrap z-0">
+        PRECISIÓN EXACTA
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -63,9 +81,9 @@ const Portfolio: React.FC = () => {
               viewport={{ once: true }}
               className="flex items-center gap-4 mb-6"
             >
-              <div className="h-px w-12 bg-secondary" />
-              <span className="text-secondary font-bold tracking-widest uppercase text-sm">
-                Casos de Éxito
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-primary font-bold tracking-widest uppercase text-sm">
+                Antes y Después
               </span>
             </motion.div>
             
@@ -73,9 +91,9 @@ const Portfolio: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-[1.05]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.05]"
             >
-              Resultados que <br/> <span className="italic font-serif font-medium text-slate-800">hablan por sí solos.</span>
+              Detección exacta vs. <br/> <span className="italic font-serif font-medium text-primary">la reparación final.</span>
             </motion.h2>
           </div>
           
@@ -83,179 +101,123 @@ const Portfolio: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-slate-500 max-w-md text-lg leading-relaxed md:text-right"
+            className="text-slate-600 max-w-md text-lg leading-relaxed md:text-right font-medium"
           >
-            Cada proyecto es la prueba viviente de nuestra capacidad para detectar fugas ocultas sin romper lo innecesario.
+            Comprueba visualmente nuestro diferenciador clave: rompemos solo lo estrictamente necesario para solucionar la emergencia.
           </motion.p>
         </div>
 
-        {/* Asymmetrical Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          
-          {/* Featured Large Item (Spans 7 cols) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-7 relative group lg:self-start"
-          >
-            <button 
-              onClick={() => setSelected(portfolioItems[0])}
-              className="w-full text-left relative rounded-[2rem] overflow-hidden shadow-2xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block"
+        {/* Selector de Casos */}
+        <div className="flex flex-wrap gap-3 mb-12">
+          {cases.map((c) => (
+            <button
+              key={c.id}
+              onClick={() => setActiveTab(c.id)}
+              className={`px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 ${
+                activeTab === c.id 
+                  ? 'bg-primary text-white shadow-lg shadow-primary/20 scale-105' 
+                  : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+              }`}
             >
-              <div className="aspect-[4/5] lg:aspect-square w-full">
-                <img 
-                  src={portfolioItems[0].image} 
-                  alt={portfolioItems[0].alt}
-                  width={800}
-                  height={800}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+              {c.title}
             </button>
-            
-            {/* Floating Info Box for Featured */}
-            <button 
-              onClick={() => setSelected(portfolioItems[0])}
-              className="absolute text-left -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-top-8 lg:-left-8 bg-white/90 backdrop-blur-xl p-5 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] z-20 transition-transform duration-500 group-hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-secondary/50 cursor-pointer hover:bg-white"
-            >
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-primary mb-1.5 lg:mb-2">{portfolioItems[0].title}</h3>
-              <p className="text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed">{portfolioItems[0].description}</p>
-              <div className="mt-3 lg:mt-6 flex items-center gap-2 text-secondary font-bold uppercase tracking-wider text-xs sm:text-sm group-hover:text-primary transition-colors">
-                <ZoomIn size={14} className="lg:w-4 lg:h-4" /> Ver Detalles
-              </div>
-            </button>
-          </motion.div>
-
-          {/* Right Column: Two stacked smaller items */}
-          <div className="lg:col-span-5 flex flex-col gap-12 lg:gap-20 mt-20 lg:mt-32">
-            
-            {/* Second Item - Precisión Acústica */}
-            <motion.div 
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <button 
-                onClick={() => setSelected(portfolioItems[1])}
-                className="w-full text-left relative rounded-3xl shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block"
-              >
-                <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
-                  <img 
-                    src={portfolioItems[1].image} 
-                    alt={portfolioItems[1].alt}
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
-                    loading="lazy"
-                  />
-                </div>
-                {/* Floating Info Box - Precisión Acústica (Superior Izquierda) */}
-                <div className="absolute text-left -top-12 -left-4 sm:-top-12 sm:-left-4 lg:-top-16 lg:-left-8 bg-white/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl shadow-[0_10px_20px_-10px_rgba(0,0,0,0.15)] border border-white max-w-[200px] sm:max-w-[240px] z-20 transition-transform duration-500 group-hover:-translate-y-2">
-                  <h3 className="text-base sm:text-lg font-extrabold text-primary mb-1">{portfolioItems[1].title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">{portfolioItems[1].description}</p>
-                  <div className="mt-2.5 flex items-center gap-1.5 text-secondary font-bold uppercase tracking-wider text-xs group-hover:text-primary transition-colors">
-                    <ZoomIn size={14} className="w-3.5 h-3.5" /> Ver Detalles
-                  </div>
-                </div>
-              </button>
-            </motion.div>
-
-            {/* Third Item - Fugas en Losa */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative group lg:-ml-16"
-            >
-              <button 
-                onClick={() => setSelected(portfolioItems[2])}
-                className="w-full text-left relative rounded-3xl shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 block border-8 border-white"
-              >
-                <div className="aspect-square w-full overflow-hidden rounded-[calc(1.5rem-8px)]">
-                  <img 
-                    src={portfolioItems[2].image} 
-                    alt={portfolioItems[2].alt}
-                    width={800}
-                    height={800}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                    loading="lazy"
-                  />
-                </div>
-                {/* Floating Info Box - Fugas en Losa (Inferior Izquierda) */}
-                <div className="absolute text-left -bottom-4 -left-2 sm:-bottom-4 sm:-left-2 lg:-bottom-6 lg:-left-6 bg-white/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl shadow-[0_10px_20px_-10px_rgba(0,0,0,0.15)] border border-white max-w-[180px] sm:max-w-[220px] z-20 transition-transform duration-500 group-hover:-translate-y-2">
-                  <h3 className="text-sm sm:text-base font-extrabold text-primary mb-1">{portfolioItems[2].title}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2">{portfolioItems[2].description}</p>
-                  <div className="mt-2 flex items-center gap-1.5 text-secondary font-bold uppercase tracking-wider text-[11px] sm:text-xs group-hover:text-primary transition-colors">
-                    <ZoomIn size={14} className="w-3.5 h-3.5" /> Ver Detalles
-                  </div>
-                </div>
-              </button>
-            </motion.div>
-
-          </div>
+          ))}
         </div>
 
-      </div>
-
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {selected && (
+        {/* Contenedor Comparativo Visual */}
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 backdrop-blur-md px-4"
-            onClick={() => setSelected(null)}
+            key={selectedCase.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-xl"
           >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="relative max-w-5xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="md:w-2/3 shrink-0">
-                <img
-                  src={selected.image}
-                  alt={selected.alt}
-                  width={800}
-                  height={800}
-                  className="w-full h-48 md:h-full object-cover md:max-h-[80vh]"
-                />
-              </div>
-              <div className="md:w-1/3 p-8 md:p-12 flex flex-col justify-center bg-slate-50">
-                <div className="w-10 h-10 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                  <ZoomIn size={20} />
-                </div>
-                <h3 className="text-3xl font-extrabold text-primary mb-4 leading-tight">{selected.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-lg mb-8">{selected.fullDescription || selected.description}</p>
-                
-                <a
-                  href={`https://wa.me/56966795221?text=${encodeURIComponent(selected.whatsappText || 'Hola Adolfo, necesito detectar una fuga de agua. ¿Puede ayudarme?')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-secondary transition-colors"
-                >
-                  Solicitar evaluación
-                </a>
-              </div>
+            <div className="max-w-3xl mb-10">
+              <span className="text-xs font-bold text-primary tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full">
+                Caso Documentado
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-3 mb-2">
+                {selectedCase.subtitle}
+              </h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                {selectedCase.description}
+              </p>
+            </div>
+
+            {/* Grilla comparativa Antes vs Después */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
               
-              <button
-                onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 md:right-auto md:left-4 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full transition-colors z-10"
-                aria-label="Cerrar ventana de detalles del servicio"
+              {/* ANTES (Detección Exacta) */}
+              <div className="flex flex-col bg-slate-50 rounded-2xl p-5 border border-slate-200/60 relative overflow-hidden group">
+                <div className="absolute top-4 left-4 z-20 bg-slate-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                  <AlertCircle size={14} className="text-secondary" /> {selectedCase.before.label}
+                </div>
+                
+                <div className="aspect-[4/3] w-full rounded-xl overflow-hidden mb-4 relative bg-slate-200">
+                  <img
+                    src={selectedCase.before.image}
+                    alt={selectedCase.before.label}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                </div>
+
+                <div className="mt-auto">
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Fase 1: Localización</span>
+                  <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
+                    {selectedCase.before.desc}
+                  </p>
+                </div>
+              </div>
+
+              {/* DESPUÉS (Reparación Final) */}
+              <div className="flex flex-col bg-orange-50/50 rounded-2xl p-5 border border-primary/20 relative overflow-hidden group">
+                <div className="absolute top-4 left-4 z-20 bg-primary/95 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-md">
+                  <CheckCircle2 size={14} /> {selectedCase.after.label}
+                </div>
+                
+                <div className="aspect-[4/3] w-full rounded-xl overflow-hidden mb-4 relative bg-slate-200">
+                  <img
+                    src={selectedCase.after.image}
+                    alt={selectedCase.after.label}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                </div>
+
+                <div className="mt-auto">
+                  <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-1">Fase 2: Intervención Mínima</span>
+                  <p className="text-sm sm:text-base text-slate-800 font-bold leading-relaxed">
+                    {selectedCase.after.desc}
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* CTA Inferior de la Card */}
+            <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-xs sm:text-sm text-slate-500 font-medium text-center sm:text-left">
+                ¿Sufres una situación similar? Evaluamos tu caso con el mismo nivel de precisión.
+              </p>
+              <a
+                href={`https://wa.me/56966795221?text=${encodeURIComponent(selectedCase.whatsappText)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-primary text-white font-bold text-sm rounded-xl transition-colors shadow-sm"
               >
-                <X size={20} className="text-white md:text-slate-900" />
-              </button>
-            </motion.div>
+                Solicitar Diagnóstico Similar <ArrowRight size={16} />
+              </a>
+            </div>
+
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+
+      </div>
     </section>
   );
 };

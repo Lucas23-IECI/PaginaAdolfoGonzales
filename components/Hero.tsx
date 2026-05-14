@@ -10,7 +10,7 @@ const HERO_IMAGE =
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0 },
 };
 
 const staggerContainer = {
@@ -23,9 +23,9 @@ const staggerContainer = {
 
 const SonarWave = () => (
   <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
-    <div className="absolute inset-0 rounded-full border-2 border-[#16a34a] opacity-20 animate-ping" style={{ animationDuration: '2s' }} />
-    <div className="absolute inset-1 rounded-full border-2 border-[#16a34a] opacity-40 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
-    <div className="relative z-10 w-5 h-5 bg-[#16a34a] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(22,163,74,0.6)]">
+    <div className="absolute inset-0 rounded-full border-2 border-[#ea580c] opacity-20 animate-ping" style={{ animationDuration: '2s' }} />
+    <div className="absolute inset-1 rounded-full border-2 border-[#ea580c] opacity-40 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
+    <div className="relative z-10 w-5 h-5 bg-[#ea580c] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(234,88,12,0.6)]">
       <Activity size={12} className="text-white" />
     </div>
   </div>
@@ -38,11 +38,11 @@ const BadgeBlock = () => (
     <div className="inline-flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-white/60 backdrop-blur-md border border-slate-200/60 shadow-sm relative overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
       <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16a34a] opacity-75" />
-        <span className="relative inline-flex rounded-full h-full w-full bg-[#16a34a]" />
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ea580c] opacity-75" />
+        <span className="relative inline-flex rounded-full h-full w-full bg-[#ea580c]" />
       </span>
       <span className="text-[9px] sm:text-xs font-black text-slate-800 tracking-widest uppercase flex items-center gap-1.5">
-        Detección Inteligente <Zap size={12} className="text-[#16a34a] sm:w-[14px] sm:h-[14px]" />
+        Tecnología de Punta <Zap size={12} className="text-[#ea580c] sm:w-[14px] sm:h-[14px]" />
       </span>
     </div>
   </motion.div>
@@ -51,18 +51,18 @@ const BadgeBlock = () => (
 const HeadlineBlock = () => (
   <motion.h1 
     variants={fadeUp} 
-    className="hero-title font-black text-slate-900 leading-[1] lg:leading-[0.9] tracking-[-0.04em] relative sm:text-6xl lg:text-[6.5rem]"
+    className="hero-title font-black text-slate-900 leading-[1.05] lg:leading-[0.95] tracking-[-0.04em] relative sm:text-5xl lg:text-[5.5rem]"
   >
-    <span className="block mb-1 sm:mb-2">Localizamos</span>
-    <span className="block mb-1 sm:mb-2 text-slate-400">la fuga,</span>
-    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#0f5a3b] via-[#16a34a] to-[#22c55e] inline-block pr-4 lg:pr-8">
-      no la excusa.
-      <svg className="absolute -bottom-1 lg:-bottom-4 left-0 w-full drop-shadow-[0_5px_10px_rgba(22,163,74,0.4)]" viewBox="0 0 400 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <span className="block mb-1 sm:mb-2 text-slate-400 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold">¿Sospechas de una filtración de agua?</span>
+    <span className="block mb-1 sm:mb-2">Nosotros te</span>
+    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] via-[#f97316] to-[#fb923c] inline-block pr-4 lg:pr-8">
+      ayudamos.
+      <svg className="absolute -bottom-1 lg:-bottom-4 left-0 w-full drop-shadow-[0_5px_10px_rgba(234,88,12,0.4)]" viewBox="0 0 400 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 15C100 5 200 5 300 15C350 20 380 15 400 5" stroke="url(#paint0_linear)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
         <defs>
           <linearGradient id="paint0_linear" x1="0" y1="10" x2="400" y2="10" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#16a34a"/>
-            <stop offset="1" stopColor="#22c55e" stopOpacity="0"/>
+            <stop stopColor="#ea580c"/>
+            <stop offset="1" stopColor="#fb923c" stopOpacity="0"/>
           </linearGradient>
         </defs>
       </svg>
@@ -71,13 +71,14 @@ const HeadlineBlock = () => (
 );
 
 const SubtitleBlock = () => (
-  <motion.p 
-    variants={fadeUp} 
-    className="text-sm sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-medium mt-2 border-l-4 border-[#16a34a] pl-4 lg:pl-6"
-  >
-    <strong className="text-slate-900 block mb-1.5 lg:mb-2">10 años de experiencia en el rubro de la gasfitería y <a href="#portafolio" className="underline decoration-[#16a34a]/30 hover:decoration-[#16a34a] transition-colors" title="Ver casos de éxito de filtraciones">detectando filtraciones</a> de agua potable.</strong>
-    Dile adiós a los gasfiteros que rompen para buscar. Con nuestro <a href="#servicios" className="underline decoration-[#16a34a]/30 hover:decoration-[#16a34a] transition-colors" title="Ver servicios de radar acústico">sistema</a> de <strong className="text-slate-900 font-extrabold bg-[#16a34a]/10 px-1.5 py-0.5 rounded">Radar Acústico 3D</strong>, sabemos exactamente dónde está el problema antes de tocar una herramienta.
-  </motion.p>
+  <motion.div variants={fadeUp} className="mt-4 flex flex-col gap-3 border-l-4 border-[#ea580c] pl-4 lg:pl-6">
+    <p className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+      Detección de fugas en Concepción sin romper tu casa.
+    </p>
+    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-medium">
+      Líderes en <strong className="text-slate-900 font-extrabold bg-[#ea580c]/10 px-1.5 py-0.5 rounded">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-slate-900 font-extrabold bg-[#ea580c]/10 px-1.5 py-0.5 rounded">filtración de agua</strong> oculta. Garantizamos una <strong className="text-slate-900 font-extrabold bg-[#ea580c]/10 px-1.5 py-0.5 rounded">detección de filtración</strong> exacta mediante ultrasonido y termografía infrarroja. Sabemos exactamente dónde está el problema con precisión milimétrica para intervenir solo lo estrictamente necesario.
+    </p>
+  </motion.div>
 );
 
 const CTABlock = ({ handleScroll }: { handleScroll: any }) => (
@@ -86,19 +87,19 @@ const CTABlock = ({ handleScroll }: { handleScroll: any }) => (
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Solicitar escaneo de fuga de agua vía WhatsApp"
-      className="group relative inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-5 bg-[#0a0a0a] text-white text-base sm:text-lg font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(22,163,74,0.4)]"
+      aria-label="Contactar por WhatsApp para detectar fuga"
+      className="group relative inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-6 bg-[#ea580c] hover:bg-[#c2410c] text-white text-base sm:text-xl font-black rounded-2xl overflow-hidden transition-all hover:scale-105 shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.5)]"
     >
-      <div className="absolute inset-0 bg-[#16a34a]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-      <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-      <Activity size={20} className="relative z-10 text-[#22c55e] group-hover:animate-pulse sm:w-6 sm:h-6" />
-      <span className="relative z-10">Solicitar Escaneo</span>
+      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+      <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-20deg]" />
+      <Activity size={24} className="relative z-10 text-white group-hover:animate-pulse sm:w-7 sm:h-7" />
+      <span className="relative z-10 tracking-wide">¡Contactar por WhatsApp!</span>
     </a>
     <a
       href="#servicios"
       onClick={(e) => handleScroll(e, 'servicios')}
-      aria-label="Ver detalles de nuestra tecnología de radar"
-      className="inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-5 bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-200 hover:border-slate-300 text-base sm:text-lg font-bold rounded-2xl transition-all shadow-sm"
+      aria-label="Ver detalles de nuestra tecnología avanzada"
+      className="inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 sm:py-6 bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-200 hover:border-slate-300 text-base sm:text-lg font-bold rounded-2xl transition-all shadow-sm"
     >
       Ver Tecnología
       <ArrowRight size={18} className="text-slate-400 sm:w-5 sm:h-5" />
@@ -117,15 +118,15 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
     <div className={`relative w-full h-full overflow-hidden bg-slate-900 group ${isMobile ? 'rounded-[1.5rem] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] border border-white/30' : 'max-w-[550px] rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] border border-white/40'}`}>
       <img
         src={HERO_IMAGE}
-        alt="Inspección técnica de tuberías"
+        alt="Detección de fugas de agua con tecnología avanzada"
         width={800}
         height={533}
         className="w-full h-full object-cover object-center scale-110 opacity-80 group-hover:opacity-60 transition-all duration-[3s]"
         loading="eager"
         fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#16a34a1a_1px,transparent_1px),linear-gradient(to_bottom,#16a34a1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30 z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ea580c1a_1px,transparent_1px),linear-gradient(to_bottom,#ea580c1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-[#0f172a]/30 z-10" />
     </div>
 
     {/* UI Component 1: Scanning Status */}
@@ -139,14 +140,14 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
         <div className="bg-white/90 backdrop-blur-2xl p-6 rounded-3xl shadow-xl border border-white/50 flex items-center gap-5 w-max">
           <SonarWave />
           <div className="min-w-0">
-            <p className={`${isMobile ? 'text-sm' : 'text-xs'} font-black text-slate-400 uppercase tracking-[0.2em] mb-1`}>Módulo Acústico</p>
-            <p className={`${isMobile ? 'text-xl' : 'text-base'} font-black text-slate-800`}>Analizando terreno...</p>
+            <p className={`${isMobile ? 'text-sm' : 'text-xs'} font-black text-slate-400 uppercase tracking-[0.2em] mb-1`}>Ultrasonido & Termografía</p>
+            <p className={`${isMobile ? 'text-xl' : 'text-base'} font-black text-slate-800`}>Escaneando estructura...</p>
             <div className="flex gap-1.5 mt-2">
-              <div className="h-2 w-12 bg-[#16a34a] rounded-full overflow-hidden relative">
+              <div className="h-2 w-12 bg-[#ea580c] rounded-full overflow-hidden relative">
                  <div className="absolute inset-0 bg-white/40 animate-[shimmer_1s_infinite] -translate-x-full"></div>
               </div>
-              <div className="h-2 w-4 bg-[#16a34a]/20 rounded-full"></div>
-              <div className="h-2 w-2 bg-[#16a34a]/20 rounded-full"></div>
+              <div className="h-2 w-4 bg-[#ea580c]/20 rounded-full"></div>
+              <div className="h-2 w-2 bg-[#ea580c]/20 rounded-full"></div>
             </div>
           </div>
         </div>
@@ -161,18 +162,18 @@ const HeroVisuals = ({ isMobile = false }: { isMobile?: boolean }) => (
       transition={{ delay: 1.1, duration: 0.8 }}
     >
       <div style={isMobile ? { transform: 'scale(0.4)', transformOrigin: 'bottom right' } : {}}>
-        <div className="bg-[#0f5a3b]/95 backdrop-blur-xl p-6 rounded-3xl shadow-[0_20px_40px_-10px_rgba(15,90,59,0.5)] border border-[#16a34a]/40 flex flex-col gap-2 w-[240px]">
+        <div className="bg-[#0f172a]/95 backdrop-blur-xl p-6 rounded-3xl shadow-[0_20px_40px_-10px_rgba(15,23,42,0.5)] border border-[#ea580c]/40 flex flex-col gap-2 w-[240px]">
           <div className="flex justify-between items-center mb-1 gap-4">
-            <div className="w-10 h-10 shrink-0 rounded-xl bg-[#16a34a]/30 flex items-center justify-center border border-[#16a34a]/50">
-              <Droplet size={18} className="text-[#22c55e]" />
+            <div className="w-10 h-10 shrink-0 rounded-xl bg-[#ea580c]/20 flex items-center justify-center border border-[#ea580c]/40">
+              <Droplet size={18} className="text-[#f97316]" />
             </div>
             <div className="flex flex-col items-end min-w-0">
-              <span className={`${isMobile ? 'text-sm' : 'text-xs'} font-bold text-[#16a34a] uppercase`}>Tasa de Éxito</span>
-              <span className={`${isMobile ? 'text-2xl' : 'text-lg'} font-black text-white`}>99.9%</span>
+              <span className={`${isMobile ? 'text-sm' : 'text-xs'} font-bold text-[#f97316] uppercase`}>Precisión</span>
+              <span className={`${isMobile ? 'text-2xl' : 'text-lg'} font-black text-white`}>100%</span>
             </div>
           </div>
-          <div className="w-full h-px bg-gradient-to-r from-[#16a34a]/50 to-transparent my-2" />
-          <p className={`text-white font-bold leading-tight ${isMobile ? 'text-base' : 'text-sm'}`}>Garantía de daño cero en infraestructuras.</p>
+          <div className="w-full h-px bg-gradient-to-r from-[#ea580c]/50 to-transparent my-2" />
+          <p className={`text-white font-bold leading-tight ${isMobile ? 'text-base' : 'text-sm'}`}>Garantía de daño cero al localizar la filtración.</p>
         </div>
       </div>
     </motion.div>
@@ -192,8 +193,8 @@ const Hero: React.FC = () => {
   return (
     <section id="inicio" className="relative min-h-[100vh] flex items-center pt-24 pb-20 overflow-hidden">
       {/* ── Background: Ambient Glows ── */}
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#16a34a]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#0f5a3b]/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#ea580c]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#f97316]/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         

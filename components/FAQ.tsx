@@ -5,34 +5,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs: FaqItem[] = [
   {
-    question: '¿Es necesario romper paredes o pisos para encontrar la fuga?',
+    question: '¿Es necesario romper paredes o pisos para realizar la detección de filtración?',
     answer:
-      'No. Utilizamos geófonos y equipos de detección acústica que nos permiten localizar la fuga desde la superficie, sin necesidad de romper paredes, pisos ni excavar. Una vez identificado el punto exacto, el arreglo puede ser mínimamente invasivo, ahorrándote tiempo y dinero.',
+      'No. Utilizamos geófonos de alta sensibilidad y equipos de ultrasonido que nos permiten realizar la detección de filtración de agua desde la superficie, sin necesidad de romper paredes, pisos ni excavar a ciegas. Una vez identificado el centímetro exacto de la falla, la intervención es mínima, protegiendo tu hogar.',
   },
   {
-    question: '¿Qué tecnología utilizan para detectar las fugas?',
+    question: '¿Qué tecnología utilizan ante una filtración de agua oculta?',
     answer:
-      'Trabajamos con geófonos de alta sensibilidad —dispositivos que "escuchan" el ruido que hace el agua al escapar por una cañería defectuosa. Esta tecnología nos permite localizar la fuga con una precisión de centímetros, sin hacer ningún daño previo a la estructura.',
+      'Trabajamos con sensores acústicos avanzados (geófonos) que aíslan las frecuencias del escape presurizado ante cualquier filtración de agua, sumados a cámaras termográficas infrarrojas. Esto garantiza una detección de fugas en Concepción totalmente certera y no destructiva.',
   },
   {
-    question: '¿En qué comunas atienden?',
+    question: '¿En qué comunas realizan la detección de fugas en Concepción?',
     answer:
-      'Atendemos en Concepción, Chiguayante, Talcahuano y comunas cercanas del Gran Concepción. Si no estás seguro si tu zona tiene cobertura, escríbenos por WhatsApp y te confirmamos disponibilidad sin ningún compromiso.',
+      'Abarcamos de manera directa todas las comunas del Gran Concepción con unidades de respuesta rápida: Concepción centro, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Coronel, Lota y Hualqui. Si tu sector está en los alrededores, escríbenos por WhatsApp y coordinamos la visita.',
   },
   {
-    question: '¿Cuánto tiempo demora la detección?',
+    question: '¿Cuánto tiempo demora la detección de filtración?',
     answer:
-      'Depende del tipo de instalación y la complejidad del caso, pero en la mayoría de los casos logramos identificar la fuga en una visita de 1 a 2 horas. Llegamos con todo el equipo necesario, sin que tengas que preparar nada especial.',
+      'En la gran mayoría de los casos logramos identificar el punto exacto de la filtración de agua en una inspección técnica de 1 a 2 horas. Llegamos con todo el instrumental especializado de diagnóstico.',
   },
   {
-    question: '¿Reparan la fuga también, o solo la detectan?',
+    question: '¿Reparan la fuga de agua también, o solo la detectan?',
     answer:
-      'Sí. Gracias a nuestra experiencia de 10 años en gasfitería, podemos también reparar la fuga una vez detectada. En muchos casos coordinamos todo en una sola visita: detección y reparación, minimizando molestias para ti.',
+      'Sí. Contamos con la experticia técnica para reparar la rotura una vez detectada de forma puntual. En la mayoría de las atenciones resolvemos todo en la misma visita: detección exacta e intervención focalizada, reduciendo molestias al mínimo.',
   },
   {
-    question: '¿Cómo se cobra el servicio?',
+    question: '¿Cómo se cobra el servicio de inspección?',
     answer:
-      'El presupuesto es siempre sin compromiso. El valor del servicio se cotiza según el tipo de detección, la complejidad y la accesibilidad del punto. Aceptamos efectivo y transferencia bancaria. Contáctanos por WhatsApp para más información o para coordinar una visita.',
+      'La evaluación y coordinación preliminar por WhatsApp es sin compromiso. El valor del servicio técnico se cotiza según el tipo de estructura y la complejidad de la filtración de agua. Aceptamos efectivo y transferencia bancaria.',
   },
 ];
 

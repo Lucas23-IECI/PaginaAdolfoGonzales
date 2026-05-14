@@ -11,12 +11,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary":          "#0f5a3b",
-        "primary-dark":     "#093d28",
-        "secondary":        "#16a34a",
+        "primary":          "#ea580c",
+        "primary-dark":     "#c2410c",
+        "secondary":        "#f97316",
         "background-light": "#FFFFFF",
-        "background-alt":   "#f0fdf4",
-        "background-dark":  "#0d1f17",
+        "background-alt":   "#fff7ed",
+        "background-dark":  "#0f172a",
       },
       fontFamily: {
         "sans": ["Manrope", "sans-serif"],
