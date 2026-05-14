@@ -6,7 +6,7 @@ const WHATSAPP_LINK =
   'https://wa.me/56966795221?text=Hola%20Adolfo%2C%20necesito%20detectar%20una%20fuga%20de%20agua.%20%C2%BFPuede%20ayudarme%3F';
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&fm=webp&w=800&q=80';
+  'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&fm=webp&w=800&q=60';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

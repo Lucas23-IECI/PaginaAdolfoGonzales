@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
               <div className="hidden sm:block h-10 w-px bg-slate-800/50 mx-1" />
               <div className="flex flex-col">
                 <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1 ml-1">Certificación SEC</span>
-                <img src="/sec_logo.png" alt="Sello de Certificación SEC" className="h-14 w-auto object-contain drop-shadow-md brightness-90" />
+                <img src="/sec_logo.png" alt="Sello de Certificación SEC" width={120} height={56} className="h-14 w-auto object-contain drop-shadow-md brightness-90" />
               </div>
             </div>
           </div>
