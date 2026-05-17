@@ -181,11 +181,11 @@ const Contact: React.FC = () => {
                   type="submit"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
-                  className="w-full bg-primary hover:bg-[#c2410c] text-white font-black py-4 sm:py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/20 text-base sm:text-lg group relative overflow-hidden"
+                  className="w-full bg-primary hover:bg-[#c2410c] text-white font-black py-4 px-4 sm:py-5 sm:px-6 rounded-2xl transition-all flex items-center justify-center gap-2 sm:gap-3 shadow-xl shadow-primary/20 text-sm sm:text-lg group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
                   <WhatsAppIcon size={22} className="shrink-0" />
-                  <span>Enviar a WhatsApp Inmediatamente</span>
+                  <span className="text-center leading-tight">Enviar a WhatsApp Inmediatamente</span>
                   <motion.div animate={{ x: isHovering ? 5 : 0 }} transition={{ type: "spring" }} className="shrink-0">
                     <ArrowRight size={18} />
                   </motion.div>
