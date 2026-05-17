@@ -11,11 +11,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary":          "#ea580c",
-        "primary-dark":     "#c2410c",
-        "secondary":        "#f97316",
+        "primary":          "#16a34a",
+        "primary-dark":     "#15803d",
+        "secondary":        "#ea580c",
         "background-light": "#FFFFFF",
-        "background-alt":   "#fff7ed",
+        "background-alt":   "#f0fdf4",
         "background-dark":  "#0f172a",
       },
       fontFamily: {

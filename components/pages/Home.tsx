@@ -9,6 +9,7 @@ const Portfolio = React.lazy(() => import('../Portfolio'));
 const FAQ = React.lazy(() => import('../FAQ'));
 const Contact = React.lazy(() => import('../Contact'));
 const Footer = React.lazy(() => import('../Footer'));
+const BeforeAndAfter = React.lazy(() => import('../BeforeAndAfter'));
 
 const Home: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const Home: React.FC = () => {
           <div className="w-full flex justify-center py-2">
             <div className="w-24 h-1 rounded-full bg-gradient-to-r from-[#0f5a3b] via-[#16a34a] to-[#4ade80] opacity-40" />
           </div>
+          <BeforeAndAfter />
           <Services />
           <Portfolio />
           {/* Separador verde */}
