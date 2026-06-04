@@ -180,12 +180,23 @@ const Portfolio: React.FC = () => {
                   </div>
                   
                   <div className="aspect-[4/3] w-full rounded-xl overflow-hidden mb-4 relative bg-slate-200">
-                    <img
-                      src={selectedCase.before!.image}
-                      alt={selectedCase.before!.label}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
+                    {selectedCase.before!.image.endsWith('.mp4') ? (
+                      <video
+                        src={selectedCase.before!.image}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={selectedCase.before!.image}
+                        alt={selectedCase.before!.label}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                   </div>
 
@@ -204,12 +215,23 @@ const Portfolio: React.FC = () => {
                   </div>
                   
                   <div className="aspect-[4/3] w-full rounded-xl overflow-hidden mb-4 relative bg-slate-200">
-                    <img
-                      src={selectedCase.after!.image}
-                      alt={selectedCase.after!.label}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
+                    {selectedCase.after!.image.endsWith('.mp4') ? (
+                      <video
+                        src={selectedCase.after!.image}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={selectedCase.after!.image}
+                        alt={selectedCase.after!.label}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                   </div>
 
@@ -232,12 +254,23 @@ const Portfolio: React.FC = () => {
                   </div>
                   
                   <div className="aspect-[4/3] w-full rounded-xl overflow-hidden relative bg-slate-200">
-                    <img
-                      src={selectedCase.single!.image}
-                      alt={selectedCase.single!.label}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
+                    {selectedCase.single!.image.endsWith('.mp4') ? (
+                      <video
+                        src={selectedCase.single!.image}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={selectedCase.single!.image}
+                        alt={selectedCase.single!.label}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
                   </div>
                 </div>

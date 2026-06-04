@@ -21,9 +21,16 @@ const BeforeAndAfter: React.FC = () => {
           
           {/* Images */}
           <div className="relative w-full aspect-[4/3] md:aspect-[16/10] cursor-pointer" onClick={() => setShowAfter(!showAfter)}>
-            {/* Imagen Antes (Siempre visible en el fondo) */}
-            <div className="absolute inset-0">
-              <img src="/anteshd.png" alt="Fuga detectada" className="w-full h-full object-cover" />
+            {/* Video Antes (Siempre visible en el fondo) */}
+            <div className="absolute inset-0 bg-slate-900">
+              <video
+                src="/portfolio/antes-muro-video.mp4"
+                className="w-full h-full object-cover opacity-90"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
             
             {/* Imagen Después (Aparece suavemente por encima) */}
@@ -33,7 +40,7 @@ const BeforeAndAfter: React.FC = () => {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="absolute inset-0"
             >
-              <img src="/despueshd.png" alt="Reparación finalizada" className="w-full h-full object-cover" />
+              <img src="/portfolio/despues-muro-nuevo.jpeg" alt="Reparación finalizada" className="w-full h-full object-cover" />
             </motion.div>
 
             {/* Click hint */}
