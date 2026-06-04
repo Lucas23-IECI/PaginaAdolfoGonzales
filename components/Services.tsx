@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Activity, Flame, ShieldCheck, Eye, Compass, Gauge, ArrowRight, Wrench } from 'lucide-react';
+import { Activity, Flame, ShieldCheck, Eye, Compass, Gauge, ArrowRight, Wrench, FileText } from 'lucide-react';
 
 const waterServices = [
   {
@@ -299,6 +299,52 @@ const Services: React.FC = () => {
             ))}
           </motion.div>
         </div>
+
+        {/* ── BANNER SEGUROS Y GARANTÍA ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white border border-slate-200 p-8 sm:p-10 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm relative overflow-hidden"
+        >
+          {/* Decorative background element */}
+          <div className="absolute right-0 top-0 w-64 h-64 bg-slate-50 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
+          
+          <div className="flex flex-col md:flex-row items-start gap-6 sm:gap-8 w-full">
+            <div className="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-slate-900/10">
+              <FileText size={32} strokeWidth={1.5} />
+            </div>
+            <div className="flex-1">
+              <div className="inline-flex px-3 py-1 bg-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest rounded-full mb-4 border border-slate-200">
+                Cobertura de Seguro
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3 leading-tight">
+                ¿Cuentas con seguro de hogar? <br className="hidden sm:block" />
+                <span className="text-primary italic font-serif">Te facilitamos el reembolso.</span>
+              </h3>
+              <p className="text-base text-slate-600 font-medium leading-relaxed max-w-3xl">
+                Sabemos que las emergencias son estresantes. Por eso, al finalizar nuestra reparación, te entregamos de forma inmediata toda la documentación técnica y legal requerida por las compañías de seguro para que puedas gestionar tu cobertura sin demoras.
+              </p>
+              
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <span className="text-sm font-bold text-slate-800">Boleta de Servicio</span>
+                </div>
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <span className="text-sm font-bold text-slate-800">Informe Técnico</span>
+                </div>
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <span className="text-sm font-bold text-slate-800">Respaldo Fotográfico</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
