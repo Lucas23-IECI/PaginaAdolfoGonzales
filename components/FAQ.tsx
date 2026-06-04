@@ -17,7 +17,7 @@ const faqs: FaqItem[] = [
   {
     question: '¿En qué comunas realizan la detección de fugas en Concepción?',
     answer:
-      'Abarcamos de manera directa todas las comunas del Gran Concepción con unidades de respuesta rápida: Concepción centro, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota y Hualqui. Si tu sector está en los alrededores, escríbenos por WhatsApp y coordinamos la visita.',
+      'Abarcamos de manera directa todas las comunas del Gran Concepción con unidades de respuesta rápida: Concepción centro, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota, Hualqui, Lomas San Sebastián y Lomas San Andrés. Si tu sector está en los alrededores, escríbenos por WhatsApp y coordinamos la visita.',
   },
   {
     question: '¿Cuánto tiempo demora la detección de filtración?',

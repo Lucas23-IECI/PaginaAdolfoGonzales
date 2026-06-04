@@ -181,9 +181,9 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex flex-col gap-1">
                 <span className="text-slate-500 text-xs font-medium">Zonas de Cobertura (Todas las Comunas)</span>
-                <span className="text-xs font-medium text-slate-300 leading-relaxed block">
-                  Concepción, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota y Hualqui.
-                </span>
+                <p className="text-slate-400 leading-relaxed text-sm">
+                  Concepción, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota, Hualqui, Lomas San Sebastián y Lomas San Andrés.
+                </p>
               </li>
             </ul>
           </div>

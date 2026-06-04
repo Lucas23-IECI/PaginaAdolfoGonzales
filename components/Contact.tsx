@@ -21,6 +21,8 @@ const zones: Zone[] = [
   { name: 'Tomé', highlight: true },
   { name: 'Lota', highlight: true },
   { name: 'Hualqui', highlight: true },
+  { name: 'Lomas San Sebastián', highlight: true },
+  { name: 'Lomas San Andrés', highlight: true },
 ];
 
 const TOPICS = [
