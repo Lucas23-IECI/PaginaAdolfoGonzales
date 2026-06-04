@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
               ¿Sospechas de una filtración oculta en tu propiedad?
             </h3>
             <p className="text-slate-400 text-sm sm:text-base mt-2 font-medium">
-              Actúa a tiempo. Agenda tu evaluación con ultrasonido y cámaras termográficas sin compromisos.
+              Actúa a tiempo. Agenda tu evaluación técnica sin compromisos.
             </p>
           </div>
 
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-slate-400 leading-relaxed text-sm font-medium">
-              Líderes en <strong className="text-white font-bold">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-white font-bold">filtración de agua</strong>. Tecnología avanzada en ultrasonido y termografía para una <strong className="text-white font-bold">detección de filtración</strong> exacta sin romper tu casa.
+              Líderes en <strong className="text-white font-bold">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-white font-bold">filtración de agua</strong>. Tecnología avanzada para una <strong className="text-white font-bold">detección de filtración</strong> exacta sin romper tu casa.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <div className="flex gap-3">
@@ -182,7 +182,7 @@ const Footer: React.FC = () => {
               <li className="flex flex-col gap-1">
                 <span className="text-slate-500 text-xs font-medium">Zonas de Cobertura (Todas las Comunas)</span>
                 <span className="text-xs font-medium text-slate-300 leading-relaxed block">
-                  Concepción, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Coronel, Lota y Hualqui.
+                  Concepción, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota y Hualqui.
                 </span>
               </li>
             </ul>

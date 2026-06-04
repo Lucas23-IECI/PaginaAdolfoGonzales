@@ -61,7 +61,7 @@ const SubtitleBlock = () => (
       Detección de fugas en Concepción sin romper tu casa.
     </p>
     <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed font-medium">
-      Líderes en <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">filtración de agua</strong> oculta. Garantizamos una <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de filtración</strong> exacta mediante ultrasonido y termografía infrarroja. Sabemos exactamente dónde está el problema con precisión milimétrica para intervenir solo lo estrictamente necesario.
+      Líderes en <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">filtración de agua</strong> oculta. Garantizamos una <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de filtración</strong> exacta. Sabemos exactamente dónde está el problema con precisión milimétrica para intervenir solo lo estrictamente necesario.
     </p>
   </motion.div>
 );
@@ -78,7 +78,7 @@ const CTABlock = ({ handleScroll }: { handleScroll: any }) => (
       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
       <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-20deg]" />
       <Activity size={24} className="relative z-10 text-white group-hover:animate-pulse sm:w-7 sm:h-7" />
-      <span className="relative z-10 tracking-wide">¡Urgencias / Llamar ahora!</span>
+      <span className="relative z-10 tracking-wide">Cotizar ahora</span>
     </a>
     <a
       href="#servicios"

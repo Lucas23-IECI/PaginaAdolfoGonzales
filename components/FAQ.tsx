@@ -7,17 +7,17 @@ const faqs: FaqItem[] = [
   {
     question: '¿Es necesario romper paredes o pisos para realizar la detección de filtración?',
     answer:
-      'No. Utilizamos geófonos de alta sensibilidad y equipos de ultrasonido que nos permiten realizar la detección de filtración de agua desde la superficie, sin necesidad de romper paredes, pisos ni excavar a ciegas. Una vez identificado el centímetro exacto de la falla, la intervención es mínima, protegiendo tu hogar.',
+      'No. Utilizamos geófonos de alta sensibilidad y equipos avanzados que nos permiten realizar la detección de filtración de agua desde la superficie, sin necesidad de romper paredes, pisos ni excavar a ciegas. Una vez identificado el centímetro exacto de la falla, la intervención es mínima, protegiendo tu hogar.',
   },
   {
     question: '¿Qué tecnología utilizan ante una filtración de agua oculta?',
     answer:
-      'Trabajamos con sensores acústicos avanzados (geófonos) que aíslan las frecuencias del escape presurizado ante cualquier filtración de agua, sumados a cámaras termográficas infrarrojas. Esto garantiza una detección de fugas en Concepción totalmente certera y no destructiva.',
+      'Trabajamos con sensores acústicos avanzados (geófonos) que aíslan las frecuencias del escape presurizado ante cualquier filtración de agua. Esto garantiza una detección de fugas en Concepción totalmente certera y no destructiva.',
   },
   {
     question: '¿En qué comunas realizan la detección de fugas en Concepción?',
     answer:
-      'Abarcamos de manera directa todas las comunas del Gran Concepción con unidades de respuesta rápida: Concepción centro, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Coronel, Lota y Hualqui. Si tu sector está en los alrededores, escríbenos por WhatsApp y coordinamos la visita.',
+      'Abarcamos de manera directa todas las comunas del Gran Concepción con unidades de respuesta rápida: Concepción centro, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota y Hualqui. Si tu sector está en los alrededores, escríbenos por WhatsApp y coordinamos la visita.',
   },
   {
     question: '¿Cuánto tiempo demora la detección de filtración?',

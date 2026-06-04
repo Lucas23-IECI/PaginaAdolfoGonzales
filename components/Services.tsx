@@ -1,25 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Activity, Flame, ShieldCheck, Eye, Compass, Cpu, ArrowRight } from 'lucide-react';
+import { Activity, Flame, ShieldCheck, Eye, Compass, Gauge, ArrowRight, Wrench } from 'lucide-react';
 
 const waterServices = [
   {
     icon: Activity,
-    title: 'Ultrasonido de Alta Precisión',
+    title: 'Sensores de Alta Precisión',
     description: 'Rastreamos las ondas sonoras imperceptibles en una filtración de agua a través del concreto o tierra usando sensores acústicos avanzados.',
     badge: 'Precisión Milimétrica',
-  },
-  {
-    icon: Eye,
-    title: 'Cámaras Termográficas',
-    description: 'Visualizamos espectros de temperatura en losas y muros para la detección de filtración oculta sin romper absolutamente nada a ciegas.',
-    badge: 'Cero Destrozos',
   },
   {
     icon: Compass,
     title: 'Radar Acústico Subterráneo',
     description: 'Mapeo exacto para la detección de fugas en redes bajo tierra y jardines, ubicando fallas profundas en todo el Gran Concepción.',
     badge: 'Tecnología 3D',
+  },
+  {
+    icon: Wrench,
+    title: 'Servicio de Reparación Puntual',
+    description: 'Contamos con la experticia técnica para reparar la rotura detectada interviniendo un máximo de 1m² de superficie, reduciendo al mínimo el impacto en tu hogar.',
+    badge: 'Intervención Mínima',
   },
 ];
 
@@ -28,6 +28,7 @@ const gasServices = [
     icon: ShieldCheck,
     title: 'Certificación SEC Oficial',
     description: 'Instaladores autorizados por la Superintendencia de Electricidad y Combustibles. Tramitación de Sello Verde y regularización TC6.',
+    isSec: true,
   },
   {
     icon: Flame,
@@ -45,6 +46,67 @@ const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
 };
+
+const WaterMeterIcon = () => (
+  <svg viewBox="0 0 120 120" className="w-full h-full drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="brass" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+        <stop offset="0%" stopColor="#fde047" />
+        <stop offset="60%" stopColor="#ca8a04" />
+        <stop offset="100%" stopColor="#854d0e" />
+      </radialGradient>
+      <radialGradient id="inner-shadow" cx="50%" cy="50%" r="50%">
+        <stop offset="85%" stopColor="#ffffff" stopOpacity="1" />
+        <stop offset="100%" stopColor="#e2e8f0" stopOpacity="1" />
+      </radialGradient>
+      <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8" />
+        <stop offset="40%" stopColor="#ffffff" stopOpacity="0.1" />
+        <stop offset="50%" stopColor="#ffffff" stopOpacity="0.0" />
+        <stop offset="100%" stopColor="#ffffff" stopOpacity="0.3" />
+      </linearGradient>
+    </defs>
+    <circle cx="60" cy="60" r="58" fill="url(#brass)" stroke="#713f12" strokeWidth="2" />
+    <circle cx="60" cy="60" r="48" fill="#1e293b" />
+    <circle cx="60" cy="60" r="44" fill="url(#inner-shadow)" />
+    <rect x="26" y="32" width="68" height="24" fill="#0f172a" rx="4" />
+    <g fill="#1e293b">
+      <rect x="28" y="34" width="12" height="20" rx="1" />
+      <rect x="42" y="34" width="12" height="20" rx="1" />
+      <rect x="56" y="34" width="12" height="20" rx="1" />
+      <rect x="70" y="34" width="12" height="20" rx="1" />
+    </g>
+    <rect x="84" y="34" width="12" height="20" rx="1" fill="#ef4444" />
+    <g fontSize="16" fontFamily="Arial, monospace" fontWeight="900" fill="#ffffff" textAnchor="middle">
+      <text x="34" y="50">0</text>
+      <text x="48" y="50">0</text>
+      <text x="62" y="50">4</text>
+      <text x="76" y="50">2</text>
+      <text x="90" y="50">8</text>
+    </g>
+    <text x="60" y="66" fontSize="10" fontFamily="Arial, sans-serif" fontWeight="bold" fill="#64748b" textAnchor="middle">m³</text>
+    <g fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="1">
+      <circle cx="34" cy="80" r="10" />
+      <circle cx="86" cy="80" r="10" />
+    </g>
+    <g stroke="#ef4444" strokeWidth="2" strokeLinecap="round">
+      <line x1="34" y1="80" x2="38" y2="76" />
+      <line x1="86" y1="80" x2="82" y2="76" />
+    </g>
+    <g fill="#0f172a">
+      <circle cx="34" cy="80" r="2" />
+      <circle cx="86" cy="80" r="2" />
+    </g>
+    <g transform="translate(60, 84)">
+      <g className="animate-[spin_0.6s_linear_infinite]">
+        <circle cx="0" cy="0" r="14" fill="#fee2e2" stroke="#fca5a5" strokeWidth="1" />
+        <path d="M 0 -12 L 3 -4 L 11 -3 L 5 2 L 6 10 L 0 6 L -6 10 L -5 2 L -11 -3 L -3 -4 Z" fill="#ef4444" />
+        <circle cx="0" cy="0" r="3" fill="#991b1b" />
+      </g>
+    </g>
+    <path d="M 16 60 A 44 44 0 0 1 104 60 A 44 44 0 0 0 16 60 Z" fill="url(#glass)" />
+  </svg>
+);
 
 const Services: React.FC = () => {
   return (
@@ -88,7 +150,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-slate-600 font-medium leading-relaxed"
           >
-            Nos desmarcamos de la gasfitería tradicional. Ejecutamos la inspección y <strong className="text-slate-900 font-bold">detección de filtración de agua</strong> con precisión quirúrgica utilizando instrumental de última generación en todas las comunas de Concepción para proteger tu patrimonio.
+            Nos desmarcamos de la gasfitería tradicional. Ejecutamos la inspección y <strong className="text-slate-900 font-bold">detección de filtración de agua</strong> con alta precisión utilizando instrumental de última generación en todas las comunas de Concepción para proteger tu patrimonio.
           </motion.p>
         </div>
 
@@ -101,8 +163,9 @@ const Services: React.FC = () => {
           className="mb-16 bg-gradient-to-r from-background-alt via-white to-background-alt border-2 border-primary/20 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg shadow-orange-500/5"
         >
           <div className="flex items-center gap-5 w-full sm:w-auto">
-            <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0 shadow-md">
-              <Cpu size={28} className="animate-pulse" />
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-[2rem] flex items-center justify-center shrink-0 shadow-xl border border-slate-100 p-2 sm:p-3 relative">
+              <WaterMeterIcon />
+              <div className="absolute inset-0 bg-primary/10 rounded-[2rem] blur-xl -z-10" />
             </div>
             <div>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
@@ -208,7 +271,15 @@ const Services: React.FC = () => {
                   <div className="w-14 h-14 rounded-2xl bg-white/10 text-secondary border border-white/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                     <service.icon size={26} strokeWidth={2} />
                   </div>
-                  <span className="text-xs font-bold text-slate-400 tracking-widest uppercase">Servicio Normado</span>
+                  {service.isSec ? (
+                    <div className="flex items-center gap-3 bg-white/5 px-3 py-2 rounded-xl border border-white/5 backdrop-blur-sm">
+                      <img src="/sec_logo.png" alt="SEC" className="h-8 sm:h-10 w-auto object-contain brightness-110" />
+                      <div className="w-px h-6 bg-white/10" />
+                      <span className="text-[10px] font-black text-white tracking-widest uppercase bg-primary px-2 py-1 rounded">Clase 3</span>
+                    </div>
+                  ) : (
+                    <span className="text-xs font-bold text-slate-400 tracking-widest uppercase mt-2">Servicio Normado</span>
+                  )}
                 </div>
 
                 {/* Bottom Section */}

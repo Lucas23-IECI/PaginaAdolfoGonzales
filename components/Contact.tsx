@@ -19,7 +19,6 @@ const zones: Zone[] = [
   { name: 'Hualpén', highlight: true },
   { name: 'Penco', highlight: true },
   { name: 'Tomé', highlight: true },
-  { name: 'Coronel', highlight: true },
   { name: 'Lota', highlight: true },
   { name: 'Hualqui', highlight: true },
 ];
