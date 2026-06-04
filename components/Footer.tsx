@@ -25,9 +25,9 @@ const LogoIcon = ({ className = '' }: { className?: string }) => (
       d="M18 1L3 24C3 33.941 9.716 41 18 41C26.284 41 33 33.941 33 24L18 1Z"
       fill="currentColor"
     />
-    <circle cx="18" cy="26" r="3.5" fill="#020617" />
-    <circle cx="18" cy="26" r="7"   stroke="#020617" strokeWidth="1.5" strokeOpacity="0.6" />
-    <circle cx="18" cy="26" r="10.5" stroke="#020617" strokeWidth="1" strokeOpacity="0.25" />
+    <circle cx="18" cy="26" r="3.5" fill="white" />
+    <circle cx="18" cy="26" r="7"   stroke="white" strokeWidth="1.5" strokeOpacity="0.55" />
+    <circle cx="18" cy="26" r="10.5" stroke="white" strokeWidth="1" strokeOpacity="0.25" />
   </svg>
 );
 
