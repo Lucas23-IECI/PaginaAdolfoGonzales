@@ -100,7 +100,11 @@ const Navbar: React.FC = () => {
                 <LogoIcon className="text-white h-6 w-auto" />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="text-slate-900 text-xl font-black tracking-tight leading-none group-hover:text-primary transition-colors">
+                <span className={`text-xl font-black tracking-tight leading-none transition-colors duration-300 ${
+                  isScrolled 
+                    ? 'text-slate-900 group-hover:text-primary' 
+                    : 'text-white group-hover:text-slate-300'
+                }`}>
                   Adolfo González
                 </span>
                 <span className="text-primary text-[11px] font-extrabold tracking-[0.15em] uppercase mt-0.5">
@@ -110,16 +114,22 @@ const Navbar: React.FC = () => {
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-8">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-slate-700 hover:text-primary text-sm font-bold transition-colors relative group py-2"
+                  className={`text-xs xl:text-sm font-bold transition-colors duration-300 relative group py-2 ${
+                    isScrolled 
+                      ? 'text-slate-700 hover:text-primary' 
+                      : 'text-slate-200 hover:text-white'
+                  }`}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                    isScrolled ? 'bg-primary' : 'bg-white'
+                  }`} />
                 </a>
               ))}
             </div>
@@ -130,7 +140,7 @@ const Navbar: React.FC = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary hover:bg-[#c2410c] transition-all text-white px-6 py-3 rounded-xl text-sm font-black shadow-lg hover:shadow-primary/30 flex items-center gap-2 transform hover:scale-105 duration-300"
+                className="bg-primary hover:bg-[#c2410c] transition-all text-white px-4 py-2.5 xl:px-6 xl:py-3 rounded-xl text-xs xl:text-sm font-black shadow-lg hover:shadow-primary/30 flex items-center gap-2 transform hover:scale-105 duration-300"
               >
                 <WhatsAppIcon size={18} />
                 <span>Contacto Urgencia</span>
@@ -139,7 +149,9 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Toggle */}
             <button
-              className="lg:hidden text-slate-700 p-2 hover:text-primary transition-colors z-[60] relative"
+              className={`lg:hidden p-2 transition-colors z-[60] relative ${
+                isScrolled ? 'text-slate-700 hover:text-primary' : 'text-white hover:text-slate-200'
+              }`}
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Abrir menú de navegación"
             >

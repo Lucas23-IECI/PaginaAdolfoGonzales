@@ -21,7 +21,7 @@ const staggerContainer = {
 const HeadlineBlock = () => (
   <motion.h1 
     variants={fadeUp} 
-    className="hero-title font-black text-white leading-[1.05] lg:leading-[0.95] tracking-[-0.04em] relative sm:text-5xl lg:text-[5.5rem]"
+    className="hero-title font-black text-white leading-[1.05] lg:leading-[0.95] tracking-[-0.04em] relative sm:text-5xl lg:text-[4.75rem]"
   >
     <span className="block mb-1 sm:mb-2 text-slate-300 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold">Gasfitería y Detección de Fugas</span>
     <span className="block mb-1 sm:mb-2 text-white">en Concepción</span>
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#16a34a1a_1px,transparent_1px),linear-gradient(to_bottom,#16a34a1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 z-10 pointer-events-none" />
 
-      <div className="relative z-20 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-0">
+      <div className="relative z-20 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-28">
         
         <motion.div
           className="flex flex-col gap-8 max-w-3xl"
