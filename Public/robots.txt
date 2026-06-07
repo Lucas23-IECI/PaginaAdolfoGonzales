@@ -10,7 +10,7 @@ Disallow: /.git/
 Disallow: /src/
 
 # Indicar ubicación del Sitemap
-Sitemap: https://pagina-adolfo-gonzales.vercel.app/sitemap.xml
+Sitemap: https://www.deteccionesadolfogonzales.cl/sitemap.xml
 
 # Crawl-delay sugerido (cortesía con el servidor)
 Crawl-delay: 10

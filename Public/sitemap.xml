@@ -3,56 +3,56 @@
 
   <!-- Página Principal -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Sección Servicios (anchor) -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/#servicios</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/#servicios</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Sección Portafolio / Resultados (anchor) -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/#portafolio</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/#portafolio</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Sección FAQ (anchor) -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/#faq</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/#faq</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Sección Contacto (anchor) -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/#contacto</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/#contacto</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Política de Privacidad -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/privacidad</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/privacidad</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Términos y Condiciones -->
   <url>
-    <loc>https://pagina-adolfo-gonzales.vercel.app/terminos</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.deteccionesadolfogonzales.cl/terminos</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
