@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6"
           >
-            Coordinar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic font-serif">evaluación técnica.</span>
+            Contacto con <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic font-serif">Gasfiter en Concepción</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}

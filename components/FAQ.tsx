@@ -68,7 +68,7 @@ const FAQ: React.FC = () => {
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-[1.1] mb-8"
             >
-              Resolvemos tus <span className="italic font-serif font-medium text-slate-800">dudas.</span>
+              Preguntas sobre <span className="italic font-serif font-medium text-slate-800">Gasfitería y Detección.</span>
             </motion.h2>
 
             <motion.p 

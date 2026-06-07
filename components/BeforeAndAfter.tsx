@@ -40,7 +40,7 @@ const BeforeAndAfter: React.FC = () => {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="absolute inset-0"
             >
-              <img src="/portfolio/despues-muro-nuevo.jpeg" alt="Reparación finalizada" className="w-full h-full object-cover" />
+              <img src="/portfolio/despues-muro-nuevo.jpeg" alt="Reparación finalizada de cañería en Concepción - Gasfitería Adolfo González" className="w-full h-full object-cover" />
             </motion.div>
 
             {/* Click hint */}

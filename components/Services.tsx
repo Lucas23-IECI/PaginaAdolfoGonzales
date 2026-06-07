@@ -17,8 +17,8 @@ const waterServices = [
   },
   {
     icon: Wrench,
-    title: 'Servicio de Reparación Puntual',
-    description: 'Contamos con la experticia técnica para reparar la rotura detectada interviniendo un máximo de 1m² de superficie, reduciendo al mínimo el impacto en tu hogar.',
+    title: 'Gasfiter a Domicilio y Reparación',
+    description: 'Como tu gasfiter a domicilio de confianza, reparamos la rotura detectada interviniendo un máximo de 1m² de superficie, reduciendo las molestias al mínimo.',
     badge: 'Intervención Mínima',
   },
 ];
@@ -26,14 +26,14 @@ const waterServices = [
 const gasServices = [
   {
     icon: ShieldCheck,
-    title: 'Certificación SEC Oficial',
-    description: 'Instaladores autorizados por la Superintendencia de Electricidad y Combustibles. Tramitación de Sello Verde y regularización TC6.',
+    title: 'Gasfiter Autorizado SEC',
+    description: 'Servicio de gasfitería calificada con instaladores autorizados por la Superintendencia de Electricidad y Combustibles SEC para Sello Verde y TC6.',
     isSec: true,
   },
   {
     icon: Flame,
     title: 'Redes de Gas y Normalización',
-    description: 'Pruebas de hermeticidad de alta exigencia, detección de fugas de gas y trazado o reparación de redes bajo estricta normativa legal.',
+    description: 'Pruebas de hermeticidad, detección de fugas de gas con detectores digitales y trazado o reparación de redes bajo la normativa SEC.',
   },
 ];
 
@@ -140,7 +140,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
-            Tecnología avanzada para un <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic pr-2">diagnóstico exacto.</span>
+            Servicio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic pr-2">Gasfitería y Detecciones</span> en Concepción
           </motion.h2>
           
           <motion.p 
@@ -191,7 +191,7 @@ const Services: React.FC = () => {
           <div className="flex items-center gap-3 mb-8">
             <div className="w-3 h-8 bg-primary rounded-full" />
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              1. Detección de Fugas e Inspección de Filtración de Agua
+              1. Detección de Fugas y Filtraciones de Agua en Concepción
             </h3>
           </div>
 
@@ -247,7 +247,7 @@ const Services: React.FC = () => {
           <div className="flex items-center gap-3 mb-8">
             <div className="w-3 h-8 bg-slate-900 rounded-full" />
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              2. Redes de Gas y Certificación SEC
+              2. Gasfiter Autorizado SEC: Redes de Gas y Certificación
             </h3>
           </div>
 

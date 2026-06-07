@@ -116,7 +116,7 @@ const Portfolio: React.FC = () => {
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.05]"
             >
-              Detección exacta vs. <br/> <span className="italic font-serif font-medium text-primary">la reparación final.</span>
+              Detección de Filtraciones <br/> <span className="italic font-serif font-medium text-primary">y Reparación en Terreno</span>
             </motion.h2>
           </div>
           
@@ -192,7 +192,7 @@ const Portfolio: React.FC = () => {
                     ) : (
                       <img
                         src={selectedCase.before!.image}
-                        alt={selectedCase.before!.label}
+                        alt={`Detección de fugas en Concepción: ${selectedCase.before!.label} - Gasfiter Adolfo González`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
                       />
@@ -227,7 +227,7 @@ const Portfolio: React.FC = () => {
                     ) : (
                       <img
                         src={selectedCase.after!.image}
-                        alt={selectedCase.after!.label}
+                        alt={`Reparación de cañerías e instalaciones: ${selectedCase.after!.label} - Gasfitería`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
                       />
@@ -266,7 +266,7 @@ const Portfolio: React.FC = () => {
                     ) : (
                       <img
                         src={selectedCase.single!.image}
-                        alt={selectedCase.single!.label}
+                        alt={`Detección de filtración en Concepción: ${selectedCase.single!.label} - Gasfiter SEC`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
                       />

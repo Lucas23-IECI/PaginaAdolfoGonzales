@@ -18,30 +18,15 @@ const staggerContainer = {
   },
 };
 
-const BadgeBlock = () => (
-  <motion.div variants={fadeUp} className="flex items-center">
-    <div className="inline-flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-black/40 backdrop-blur-md border border-white/20 shadow-sm relative overflow-hidden group">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
-      <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16a34a] opacity-75" />
-        <span className="relative inline-flex rounded-full h-full w-full bg-[#16a34a]" />
-      </span>
-      <span className="text-[9px] sm:text-xs font-black text-white tracking-widest uppercase flex items-center gap-1.5">
-        Tecnología de Punta <Zap size={12} className="text-[#16a34a] sm:w-[14px] sm:h-[14px]" />
-      </span>
-    </div>
-  </motion.div>
-);
-
 const HeadlineBlock = () => (
   <motion.h1 
     variants={fadeUp} 
     className="hero-title font-black text-white leading-[1.05] lg:leading-[0.95] tracking-[-0.04em] relative sm:text-5xl lg:text-[5.5rem]"
   >
-    <span className="block mb-1 sm:mb-2 text-slate-300 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold">¿Sospechas de una filtración de agua?</span>
-    <span className="block mb-1 sm:mb-2">Nosotros te</span>
+    <span className="block mb-1 sm:mb-2 text-slate-300 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold">Gasfitería y Detección de Fugas</span>
+    <span className="block mb-1 sm:mb-2 text-white">en Concepción</span>
     <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#16a34a] via-[#22c55e] to-[#4ade80] inline-block pr-4 lg:pr-8">
-      ayudamos.
+      Sin Romper.
       <svg className="absolute -bottom-1 lg:-bottom-4 left-0 w-full drop-shadow-[0_5px_10px_rgba(22,163,74,0.4)]" viewBox="0 0 400 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 15C100 5 200 5 300 15C350 20 380 15 400 5" stroke="url(#paint0_linear)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
         <defs>
@@ -58,10 +43,10 @@ const HeadlineBlock = () => (
 const SubtitleBlock = () => (
   <motion.div variants={fadeUp} className="mt-4 flex flex-col gap-3 border-l-4 border-[#16a34a] pl-4 lg:pl-6">
     <p className="text-xl sm:text-2xl font-black text-white tracking-tight">
-      Detección de fugas en Concepción sin romper tu casa.
+      Servicio de Gasfiter y Detecciones con Ultrasonido y Termografía
     </p>
     <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed font-medium">
-      Líderes en <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas en Concepción</strong> (todas las comunas) ante cualquier <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">filtración de agua</strong> oculta. Garantizamos una <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de filtración</strong> exacta. Sabemos exactamente dónde está el problema con precisión milimétrica para intervenir solo lo estrictamente necesario.
+      ¿Buscas un <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">gasfiter en Concepción</strong> calificado? Somos especialistas en la <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas de agua</strong> y gasfitería de precisión en todas las comunas del Gran Concepción. Localizamos filtraciones invisibles con geófono acústico y tecnología no destructiva sin romper.
     </p>
   </motion.div>
 );
@@ -127,7 +112,6 @@ const Hero: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          <BadgeBlock />
           <HeadlineBlock />
           <SubtitleBlock />
           <CTABlock handleScroll={handleScroll} />
