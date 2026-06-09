@@ -46,7 +46,7 @@ const SubtitleBlock = () => (
       Servicio de Gasfiter y Detecciones con Ultrasonido y Termografía
     </p>
     <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed font-medium">
-      ¿Buscas un <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">gasfiter en Concepción</strong> calificado? Somos especialistas en la <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas de agua</strong> y gasfitería de precisión en todas las comunas del Gran Concepción. Localizamos filtraciones invisibles con geófono acústico y tecnología no destructiva sin romper.
+      ¿Buscas un <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">gasfiter en Concepción</strong> certificado? Con más de <strong className="text-white font-extrabold">10 años de experiencia</strong>, somos especialistas en <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas de agua</strong> potable y localización de filtraciones invisibles en el Gran Concepción. Localizamos averías con geófono de ultrasonido y cámaras termográficas sin romper.
     </p>
   </motion.div>
 );

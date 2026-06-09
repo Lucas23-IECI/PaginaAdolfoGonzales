@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="text-slate-600 text-lg leading-relaxed max-w-2xl font-medium"
           >
-            Atendemos urgencias ante cualquier <strong className="text-slate-900 font-bold">filtración de agua</strong> con tecnología no destructiva. Ingresa tus datos para derivar tu caso inmediatamente al equipo en terreno en el Gran Concepción.
+            ¿Tienes una cuenta de agua alta o humedad inexplicable? Agenda tu visita con un <strong className="text-slate-900 font-bold">gasfiter en Concepción</strong> especialista en detección de fugas. Ofrecemos respuestas rápidas, informes técnicos para seguros y reparación inmediata.
           </motion.p>
         </div>
 

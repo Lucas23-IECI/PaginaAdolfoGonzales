@@ -5,35 +5,35 @@ import { Activity, Flame, ShieldCheck, Eye, Compass, Gauge, ArrowRight, Wrench, 
 const waterServices = [
   {
     icon: Activity,
-    title: 'Sensores de Alta Precisión',
-    description: 'Rastreamos las ondas sonoras imperceptibles en una filtración de agua a través del concreto o tierra usando sensores acústicos avanzados.',
-    badge: 'Precisión Milimétrica',
+    title: 'Geófono de Ultrasonido',
+    description: 'Rastreamos las frecuencias y ondas sonoras de la filtración de agua a través del concreto, losas o tierra usando sensores acústicos de alta sensibilidad.',
+    badge: 'Precisión Acústica',
   },
   {
-    icon: Compass,
-    title: 'Radar Acústico Subterráneo',
-    description: 'Mapeo exacto para la detección de fugas en redes bajo tierra y jardines, ubicando fallas profundas en todo el Gran Concepción.',
-    badge: 'Tecnología 3D',
+    icon: Eye,
+    title: 'Cámaras Termográficas FLIR',
+    description: 'Mapeo térmico infrarrojo de alta resolución para ver y localizar la humedad oculta tras muros, tabiques y circuitos de losa radiante sin dañar.',
+    badge: 'Diagnóstico Visual',
   },
   {
     icon: Wrench,
-    title: 'Gasfiter a Domicilio y Reparación',
-    description: 'Como tu gasfiter a domicilio de confianza, reparamos la rotura detectada interviniendo un máximo de 1m² de superficie, reduciendo las molestias al mínimo.',
-    badge: 'Intervención Mínima',
+    title: 'Gasfitería y Reparación',
+    description: 'Con 10 años de experiencia, reparamos la rotura de cañería detectada interviniendo un espacio mínimo, cuidando al máximo la estética de tu hogar.',
+    badge: 'Garantía Técnica',
   },
 ];
 
 const gasServices = [
   {
     icon: ShieldCheck,
-    title: 'Gasfiter Autorizado SEC',
-    description: 'Servicio de gasfitería calificada con instaladores autorizados por la Superintendencia de Electricidad y Combustibles SEC para Sello Verde y TC6.',
+    title: 'Instalador Autorizado SEC',
+    description: 'Gasfitería certificada por la Superintendencia de Electricidad y Combustibles SEC. Tramitamos Sello Verde, pruebas de hermeticidad y declaraciones TC6 oficiales.',
     isSec: true,
   },
   {
     icon: Flame,
-    title: 'Redes de Gas y Normalización',
-    description: 'Pruebas de hermeticidad, detección de fugas de gas con detectores digitales y trazado o reparación de redes bajo la normativa SEC.',
+    title: 'Detección y Fugas de Gas',
+    description: 'Localización de fugas de gas licuado o natural con sensores digitales calibrados. Reparamos, trazamos y normalizamos redes de cañerías bajo norma.',
   },
 ];
 
@@ -150,7 +150,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-slate-600 font-medium leading-relaxed"
           >
-            Nos desmarcamos de la gasfitería tradicional. Ejecutamos la inspección y <strong className="text-slate-900 font-bold">detección de filtración de agua</strong> con alta precisión utilizando instrumental de última generación en todas las comunas de Concepción para proteger tu patrimonio.
+            Con más de 10 años de trayectoria, nos desmarcamos de la gasfitería tradicional destructiva. Realizamos la localización e inspección de <strong className="text-slate-900 font-bold">filtración de agua</strong> con precisión milimétrica mediante tecnología acústica y térmica en todas las comunas de Concepción.
           </motion.p>
         </div>
 

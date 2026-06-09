@@ -59,10 +59,10 @@ const BeforeAndAfter: React.FC = () => {
             {/* Text content */}
             <div className="pointer-events-none">
               <h2 className="text-lg md:text-xl font-black text-slate-900 mb-1 tracking-tight">
-                Intervención <span className="text-primary">Exacta</span>
+                Gasfitería <span className="text-primary">No Destructiva</span>
               </h2>
               <p className="text-[12px] md:text-xs text-slate-600 font-medium leading-snug">
-                Localizamos la falla exacta y reparamos solo lo estrictamente necesario. Observa nuestro proceso en acción.
+                Con 10 años de experiencia localizando la filtración exacta, reparamos la cañería dañando solo lo estrictamente necesario.
               </p>
             </div>
 

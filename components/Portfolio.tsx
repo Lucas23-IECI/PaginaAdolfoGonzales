@@ -32,9 +32,9 @@ interface PortfolioCase {
 const cases: PortfolioCase[] = [
   {
     id: 'muro',
-    title: 'Rotura en Muro/Piso',
+    title: 'Rotura en Muro o Piso',
     subtitle: 'Intervención exacta y reemplazo de cañería',
-    description: 'En lugar de demoler toda la pared buscando la filtración, identificamos el punto exacto y realizamos una apertura mínima para instalar la tubería nueva.',
+    description: 'En lugar de picar o demoler todo el muro o el piso buscando la cañería rota, nuestro servicio de gasfitería localiza el punto exacto de la filtración y realiza una apertura menor para soldar o cambiar el tramo defectuoso.',
     type: 'before-after',
     before: {
       label: 'Antes: Daño Oculto',
@@ -54,7 +54,7 @@ const cases: PortfolioCase[] = [
     id: 'subterranea',
     title: 'Fuga Subterránea',
     subtitle: 'Excavación puntual y controlada',
-    description: 'Rastreamos la onda acústica bajo tierra para cavar un hoyo circular de diámetro ultra reducido, evitando causar destrozos innecesarios en la superficie.',
+    description: 'Rastreamos la onda sonora subterránea en jardines y losas de Concepción para realizar una excavación puntual controlada de pocos centímetros de diámetro, protegiendo tu patio.',
     type: 'single',
     single: {
       label: 'Intervención Mínima',
@@ -68,7 +68,7 @@ const cases: PortfolioCase[] = [
     id: 'gas',
     title: 'Instalaciones y Gas',
     subtitle: 'Terminaciones limpias y estética profesional',
-    description: 'Además de detectar fugas, entregamos instalaciones de redes de agua y gas impecables, respetando al 100% la estética de tu hogar.',
+    description: 'Servicios de gasfitería calificada y autorizada SEC para tendidos de cobre, soldaduras de plata, y normalización de cañerías e instalaciones de gas licuado o natural bajo estricta norma.',
     type: 'single',
     single: {
       label: 'Entrega Lista',

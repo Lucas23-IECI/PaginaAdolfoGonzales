@@ -5,35 +5,35 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs: FaqItem[] = [
   {
-    question: '¿Es necesario romper paredes o pisos para realizar la detección de filtración?',
+    question: '¿Buscas un gasfiter en Concepción que detecte fugas sin romper?',
     answer:
-      'No. Utilizamos geófonos de alta sensibilidad y equipos avanzados que nos permiten realizar la detección de filtración de agua desde la superficie, sin necesidad de romper paredes, pisos ni excavar a ciegas. Una vez identificado el centímetro exacto de la falla, la intervención es mínima, protegiendo tu hogar.',
+      'Exacto. A diferencia de un gasfiter tradicional que rompe pisos y muros a ciegas para encontrar un tubo roto, nosotros utilizamos tecnología no destructiva. Empleamos geófonos acústicos (ultrasonido) y cámaras termográficas de alta resolución para "escuchar" y "ver" la humedad bajo la superficie. Esto nos permite marcar el punto exacto de la filtración y realizar una apertura mínima de máximo 1 metro cuadrado para la reparación.',
   },
   {
-    question: '¿Qué tecnología utilizan ante una filtración de agua oculta?',
+    question: '¿Qué tipo de filtraciones de agua y gas detecta un gasfiter certificado?',
     answer:
-      'Trabajamos con sensores acústicos avanzados (geófonos) que aíslan las frecuencias del escape presurizado ante cualquier filtración de agua. Esto garantiza una detección de fugas en Concepción totalmente certera y no destructiva.',
+      'Como expertos en gasfitería y detección de fugas en Concepción, localizamos fugas en cañerías de agua potable fría y caliente, matrices de jardín subterráneas, circuitos de calefacción por losa radiante, fugas de gas licuado o natural, y problemas de humedad oculta. También somos instaladores autorizados SEC, lo que nos permite trabajar bajo estrictas normas de seguridad.',
   },
   {
-    question: '¿En qué comunas realizan la detección de fugas en Concepción?',
+    question: '¿Qué comunas cubre el servicio de gasfitería a domicilio en el Gran Concepción?',
     answer:
-      'Abarcamos de manera directa todas las comunas del Gran Concepción con unidades de respuesta rápida: Concepción centro, San Pedro de la Paz, Talcahuano, Chiguayante, Hualpén, Penco, Tomé, Lota, Hualqui, Lomas San Sebastián y Lomas San Andrés. Si tu sector está en los alrededores, escríbenos por WhatsApp y coordinamos la visita.',
+      'Damos cobertura completa e inmediata en todas las comunas del Gran Concepción: Concepción centro, San Pedro de la Paz (Andalué, Huertos Familiares, El Venado), Talcahuano, Chiguayante, Hualpén, Penco, Lirquén, Tomé, Coronel, Lota y Hualqui. También atendemos sectores residenciales como Lomas San Sebastián, Lomas de San Andrés y Barrio Norte.',
   },
   {
-    question: '¿Cuánto tiempo demora la detección de filtración?',
+    question: '¿Tienen disponibilidad de gasfiter urgente para emergencias por filtración?',
     answer:
-      'En la gran mayoría de los casos logramos identificar el punto exacto de la filtración de agua en una inspección técnica de 1 a 2 horas. Llegamos con todo el instrumental especializado de diagnóstico.',
+      'Sí. Entendemos que una filtración de agua potable activa puede inundar tu casa, dañar la estructura o disparar la cuenta del agua. Contamos con vehículos técnicos equipados y listos en Concepción para responder con la mayor rapidez posible ante urgencias hidráulicas en la zona.',
   },
   {
-    question: '¿Reparan la fuga de agua también, o solo la detectan?',
+    question: '¿Qué respaldo entregan para el cobro de seguros de hogar por filtración de agua?',
     answer:
-      'Sí. Contamos con la experticia técnica para reparar la rotura una vez detectada de forma puntual. En la mayoría de las atenciones resolvemos todo en la misma visita: detección exacta e intervención focalizada, reduciendo molestias al mínimo.',
+      'Al terminar el trabajo de gasfitería, entregamos una boleta de servicio detallada, un informe técnico formal firmado por nuestro especialista certificado SEC y un respaldo fotográfico completo de la detección y la reparación. Estos documentos son los exigidos por las compañías de seguros en Chile para tramitar el reembolso de los gastos de reparación de cañerías y daños por humedad.',
   },
   {
-    question: '¿Cómo se cobra el servicio de inspección?',
+    question: '¿Ofrecen garantía en los trabajos de gasfitería y reparación de fugas?',
     answer:
-      'La evaluación y coordinación preliminar por WhatsApp es sin compromiso. El valor del servicio técnico se cotiza según el tipo de estructura y la complejidad de la filtración de agua. Aceptamos efectivo y transferencia bancaria.',
-  },
+      'Por supuesto. Con más de 10 años de experiencia, respaldamos cada una de nuestras detecciones y reparaciones con garantía de calidad técnica. Si realizamos la reparación de la cañería rota, nos aseguramos de realizar pruebas de presión hidráulica digital para certificar que el circuito ha quedado 100% hermético antes de cerrar.',
+  }
 ];
 
 const FAQ: React.FC = () => {
