@@ -15,10 +15,10 @@ const BeforeAndAfter: React.FC = () => {
   return (
     <section className="py-12 md:py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Massive Image Container */}
         <div className="relative w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group flex flex-col md:block">
-          
+
           {/* Images */}
           <div className="relative w-full aspect-[4/3] md:aspect-[16/10] cursor-pointer" onClick={() => setShowAfter(!showAfter)}>
             {/* Video Antes (Siempre visible en el fondo) */}
@@ -32,7 +32,7 @@ const BeforeAndAfter: React.FC = () => {
                 playsInline
               />
             </div>
-            
+
             {/* Imagen Después (Aparece suavemente por encima) */}
             <motion.div
               initial={false}
@@ -50,7 +50,7 @@ const BeforeAndAfter: React.FC = () => {
           </div>
 
           {/* Floating Card Top Right (Text + Controls) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
