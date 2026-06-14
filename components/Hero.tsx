@@ -23,7 +23,7 @@ const HeadlineBlock = () => (
     variants={fadeUp} 
     className="hero-title font-black text-white leading-[1.05] lg:leading-[0.95] tracking-[-0.04em] relative sm:text-5xl lg:text-[4.75rem]"
   >
-    <span className="block mb-1 sm:mb-2 text-slate-300 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold">Gasfitería y Detección de Fugas</span>
+    <span className="block mb-1 sm:mb-2 text-slate-300 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold">Especialistas en Detección de Fugas de Agua</span>
     <span className="block mb-1 sm:mb-2 text-white">en Concepción</span>
     <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#16a34a] via-[#22c55e] to-[#4ade80] inline-block pr-4 lg:pr-8">
       Sin Romper.
@@ -43,10 +43,10 @@ const HeadlineBlock = () => (
 const SubtitleBlock = () => (
   <motion.div variants={fadeUp} className="mt-4 flex flex-col gap-3 border-l-4 border-[#16a34a] pl-4 lg:pl-6">
     <p className="text-xl sm:text-2xl font-black text-white tracking-tight">
-      Servicio de Gasfiter y Detecciones con Ultrasonido y Termografía
+      Tecnología Ultrasónica y Termografía Avanzada
     </p>
     <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed font-medium">
-      ¿Buscas un <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">gasfiter en Concepción</strong> certificado? Con más de <strong className="text-white font-extrabold">10 años de experiencia</strong>, somos especialistas en <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">detección de fugas de agua</strong> potable y localización de filtraciones invisibles en el Gran Concepción. Localizamos averías con geófono de ultrasonido y cámaras termográficas sin romper.
+      Localizamos <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">fugas ocultas y bajo radier</strong> con precisión milimétrica. Diagnóstico exacto sin demoliciones innecesarias. Además, somos <strong className="text-white font-extrabold bg-[#16a34a]/20 px-1.5 py-0.5 rounded">Instaladores Autorizados SEC</strong> para normalización y Sello Verde en el Gran Concepción.
     </p>
   </motion.div>
 );

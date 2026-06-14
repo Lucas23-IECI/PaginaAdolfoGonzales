@@ -17,7 +17,7 @@ const waterServices = [
   },
   {
     icon: Wrench,
-    title: 'Gasfitería y Reparación',
+    title: 'Reparación Especializada',
     description: 'Con 10 años de experiencia, reparamos la rotura de cañería detectada interviniendo un espacio mínimo, cuidando al máximo la estética de tu hogar.',
     badge: 'Garantía Técnica',
   },
@@ -27,7 +27,7 @@ const gasServices = [
   {
     icon: ShieldCheck,
     title: 'Instalador Autorizado SEC',
-    description: 'Gasfitería certificada por la Superintendencia de Electricidad y Combustibles SEC. Tramitamos Sello Verde, pruebas de hermeticidad y declaraciones TC6 oficiales.',
+    description: 'Instalaciones certificadas por la Superintendencia de Electricidad y Combustibles SEC. Tramitamos Sello Verde, pruebas de hermeticidad y declaraciones TC6 oficiales.',
     isSec: true,
   },
   {
@@ -140,7 +140,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
-            Servicio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic pr-2">Gasfitería y Detecciones</span> en Concepción
+            Servicio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic pr-2">Detección de Fugas</span> en Concepción
           </motion.h2>
           
           <motion.p 
@@ -247,7 +247,7 @@ const Services: React.FC = () => {
           <div className="flex items-center gap-3 mb-8">
             <div className="w-3 h-8 bg-slate-900 rounded-full" />
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              2. Gasfiter Autorizado SEC: Redes de Gas y Certificación
+              2. Instalador Autorizado SEC: Redes de Gas y Certificación
             </h3>
           </div>
 

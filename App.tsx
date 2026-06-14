@@ -6,8 +6,10 @@ import Terms from './components/pages/Terms';
 
 // Lazy load SEO pages for performance
 const DeteccionFugasAguaConcepcion = React.lazy(() => import('./components/pages/seo/DeteccionFugasAguaConcepcion'));
+const FugasBajoRadierConcepcion = React.lazy(() => import('./components/pages/seo/FugasBajoRadierConcepcion'));
 const SelloVerdeSecConcepcion = React.lazy(() => import('./components/pages/seo/SelloVerdeSecConcepcion'));
-const GasfiterCertificadoConcepcion = React.lazy(() => import('./components/pages/seo/GasfiterCertificadoConcepcion'));
+const InstaladorAutorizadoSecConcepcion = React.lazy(() => import('./components/pages/seo/InstaladorAutorizadoSecConcepcion'));
+const NormalizacionGasConcepcion = React.lazy(() => import('./components/pages/seo/NormalizacionGasConcepcion'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -46,8 +48,10 @@ const App: React.FC = () => {
           
           {/* Rutas Satélite SEO */}
           <Route path="/deteccion-fugas-agua-concepcion" element={<DeteccionFugasAguaConcepcion />} />
+          <Route path="/fugas-bajo-radier-concepcion" element={<FugasBajoRadierConcepcion />} />
           <Route path="/sello-verde-sec-concepcion" element={<SelloVerdeSecConcepcion />} />
-          <Route path="/gasfiter-certificado-concepcion" element={<GasfiterCertificadoConcepcion />} />
+          <Route path="/instalador-autorizado-sec-concepcion" element={<InstaladorAutorizadoSecConcepcion />} />
+          <Route path="/normalizacion-gas-concepcion" element={<NormalizacionGasConcepcion />} />
         </Routes>
       </Suspense>
     </Router>

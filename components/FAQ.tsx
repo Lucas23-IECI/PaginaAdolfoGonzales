@@ -15,9 +15,9 @@ const faqs: FaqItem[] = [
       'Como expertos en gasfitería y detección de fugas en Concepción, localizamos fugas en cañerías de agua potable fría y caliente, matrices de jardín subterráneas, circuitos de calefacción por losa radiante, fugas de gas licuado o natural, y problemas de humedad oculta. También somos instaladores autorizados SEC, lo que nos permite trabajar bajo estrictas normas de seguridad.',
   },
   {
-    question: '¿Qué comunas cubre el servicio de gasfitería a domicilio en el Gran Concepción?',
+    question: '¿En qué comunas prestan servicios?',
     answer:
-      'Damos cobertura completa e inmediata en todas las comunas del Gran Concepción: Concepción centro, San Pedro de la Paz (Andalué, Huertos Familiares, El Venado), Talcahuano, Chiguayante, Hualpén, Penco, Lirquén, Tomé, Coronel, Lota y Hualqui. También atendemos sectores residenciales como Lomas San Sebastián, Lomas de San Andrés y Barrio Norte.',
+      'Damos cobertura completa e inmediata en todas las comunas del Gran Concepción: Concepción centro, San Pedro de la Paz (Andalué, Huertos Familiares, El Venado), Talcahuano, Chiguayante, Hualpén, Penco, Lirquén, Tomé, Lota y Hualqui. También atendemos sectores residenciales como Lomas San Sebastián, Lomas de San Andrés y Barrio Norte.',
   },
   {
     question: '¿Tienen disponibilidad de gasfiter urgente para emergencias por filtración?',

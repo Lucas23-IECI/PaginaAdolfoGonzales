@@ -129,20 +129,20 @@ const Footer: React.FC = () => {
             <h4 className="text-xs font-bold text-slate-300 tracking-[0.15em] uppercase">Navegación</h4>
             <ul className="space-y-3">
               {[
-                ['Inicio',      '#inicio'     ],
-                ['Servicios',   '#servicios'  ],
-                ['Portafolio',  '#portafolio' ],
-                ['FAQ',         '#faq'        ],
-                ['Contacto',    '#contacto'   ],
+                ['Detección de Fugas', '/deteccion-fugas-agua-concepcion'],
+                ['Fugas Bajo Radier', '/fugas-bajo-radier-concepcion'],
+                ['Sello Verde SEC', '/sello-verde-sec-concepcion'],
+                ['Instalador Autorizado SEC', '/instalador-autorizado-sec-concepcion'],
+                ['Normalización de Gas', '/normalizacion-gas-concepcion'],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <a
-                    href={href}
+                  <Link
+                    to={href}
                     className="text-slate-500 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group w-fit"
                   >
                     <span className="w-0 h-0.5 bg-primary group-hover:w-3 transition-all duration-300 rounded-full" />
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
